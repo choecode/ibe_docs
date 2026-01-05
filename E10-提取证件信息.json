@@ -1,0 +1,35 @@
+{
+  "code": 200,
+  "msg": "处理成功！",
+  "data": {
+    "id": "17278754660286492",
+    "apiCode": "E10",
+    "apiNameEn": "AirFoidByTktNo",
+    "apiNameCn": "提取证件信息",
+    "introduce": "证件信息提取服务是用于从主机中查询某客票旅客的证件信息。",
+    "business": "查询旅客证件信息。",
+    "functions": "根据票号旅客提取证件信息。",
+    "requestSchema": "[{\"name\":\"OTA_AirTicketFoidRQ\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"证件信息提取请求\",\"children\":[{\"name\":\"POS\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"零售商信息\",\"children\":[{\"name\":\"Source\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"请求商信息\",\"children\":[{\"name\":\"RequestorID\",\"type\":\"object\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"请求者代码\",\"children\":[{\"name\":\"CompanyName\",\"type\":\"object\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"\",\"children\":[{\"name\":\"@Code\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"主控航司\",\"children\":[]}]}]},{\"name\":\"@PseudoCityCode\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"Office号\",\"children\":[]}]}]},{\"name\":\"TicketNumber\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"票号\",\"children\":[]},{\"name\":\"SecondFactor\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"双因素\",\"children\":[{\"name\":\"@Code\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"第二因素代码。如CN，NI，PP，UU，ID，NM等。对应含义如下： NI（身份证）、PP（护照）、\\n\\t\\t\\t\\t\\t\\tUU（无法识别的证件）、ID（士官证、军官证、武警警官证、海员证等）、CN（PNR）、NM（姓名）\",\"children\":[]},{\"name\":\"@Value\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"第二因素值：1、当Code传NI、ID、UU、PP四种证件代码之一时，Value传SSR FOID或SSR DOCS录入的证件号； 2、当Code传CN时，Value则录入客票关联的订座记录编码； 3、当Code传NM时，Value传出票时使用的姓名。\",\"children\":[]}]},{\"name\":\"@SysType\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"C\",\"description\":\"系统类型：系统类型: 默认值C(CRS)\",\"children\":[]}]}]",
+    "responseSchema": "[{\"name\":\"OTA_AirTicketFoidRS\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"提取证件信息响应\",\"children\":[{\"name\":\"Warnings\",\"type\":\"object\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"警告信息集\",\"children\":[{\"name\":\"Warning\",\"type\":\"array\",\"quantity\":\"1..n\",\"default\":\"\",\"description\":\"警告详细信息\",\"children\":[{\"name\":\"Trace\",\"type\":\"object\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"错误附加信息\",\"children\":[{\"name\":\"@Code\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"错误代码\",\"children\":[]},{\"name\":\"@Text\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"错误附加信息\",\"children\":[]}]},{\"name\":\"@Code\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"警告信息代码\",\"children\":[]},{\"name\":\"@Type\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"错误类型\",\"children\":[]},{\"name\":\"@ShortText\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"错误英文信息\",\"children\":[]},{\"name\":\"@ShortTextZH\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"错误中文信息\",\"children\":[]}]}]},{\"name\":\"Document\",\"type\":\"array\",\"quantity\":\"1..n\",\"default\":\"\",\"description\":\"证件信息\",\"children\":[{\"name\":\"@DocType\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"证件类型\",\"children\":[]},{\"name\":\"@DocID\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"证件号\",\"children\":[]},{\"name\":\"@RPH\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"证件的序号\",\"children\":[]}]},{\"name\":\"Errors\",\"type\":\"object\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"错误信息集\",\"children\":[{\"name\":\"Error\",\"type\":\"array\",\"quantity\":\"1..n\",\"default\":\"\",\"description\":\"错误信息\",\"children\":[{\"name\":\"Trace\",\"type\":\"object\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"错误详细描述或者内部异常信息\",\"children\":[{\"name\":\"@Code\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"编码\",\"children\":[]},{\"name\":\"@Text\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"文本\",\"children\":[]}]},{\"name\":\"@Code\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"错误代码(数字)\",\"children\":[]},{\"name\":\"@Type\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"错误类型\",\"children\":[]},{\"name\":\"@ShortText\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"错误描述信息(英文)\",\"children\":[]},{\"name\":\"@ShortTextZH\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"错误描述信息(中文)\",\"children\":[]}]}]}]}]",
+    "errorCodes": "[{\"code\":\" 403 \",\"name\":null,\"msg\":null,\"msgZh\":\" 用户名、密码、IP错误或无权限 \"},{\"code\":\" -1 \",\"name\":null,\"msg\":\" Biz Error \",\"msgZh\":\" 业务异常 \"},{\"code\":\" -530 \",\"name\":null,\"msg\":\" Passenger information is empty \",\"msgZh\":\" 旅客信息为空 \"},{\"code\":\" -390 \",\"name\":null,\"msg\":\" IBE Service Error \",\"msgZh\":\" IBE服务异常 \"},{\"code\":\" -306 \",\"name\":null,\"msg\":\" too many concurrent request for service \",\"msgZh\":\" 访问频率限制 \"},{\"code\":\" -52300 \",\"name\":null,\"msg\":\" Please check the command parameters \",\"msgZh\":\" 请检查命令参数 \"},{\"code\":\" -52301 \",\"name\":null,\"msg\":\" Current ET Data:NO RECORD \",\"msgZh\":\" 当前ET数据无记录 \"}]",
+    "createTime": "2025-07-10T17:18:24.000+08:00",
+    "createUser": "jiangdequan",
+    "updateTime": "2025-09-15T09:30:11.000+08:00",
+    "updateUser": "syke",
+    "qaApiDemos": [
+      {
+        "id": "22259132086092228",
+        "apiDocId": 17278754660286492,
+        "seqNumber": 1,
+        "demoDesc": "AirFoidByTktNo_双因素.xml",
+        "request": "<OTA_AirTicketFoidRQ>\n    <POS>\n        <SourcePseudoCityCode=\"SHA384\"/>\n    </POS>\n    <TicketNumber>999-1105869378</TicketNumber>\n    <SecondFactorCode=\"CN\" Value=\"HNBWD0\"/>\n</OTA_AirTicketFoidRQ>",
+        "response": "<?xmlversion=\"1.0\"encoding=\"UTF-8\"?>\n<OTA_AirTicketFoidRS>\n    <DocumentDocType=\"RP\"DocID=\"6326486664\"/>\n    <Document DocType=\"CC\" DocID=\"TP192099988066171\"/>\n    <Document DocType=\"FF\" DocID=\"CA006211533125/C\"/>\n    <Document DocType=\"NI\" DocID=\"430204196301012077\"/>\n</OTA_AirTicketFoidRS>",
+        "createTime": "2025-09-03T16:39:22.000+08:00",
+        "createUser": "jiangdequan",
+        "updateTime": "2025-09-15T10:30:16.000+08:00",
+        "updateUser": "syke"
+      }
+    ],
+    "url": "/xml/AirFoidByTktNo"
+  }
+}

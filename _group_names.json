@@ -1,0 +1,46 @@
+{
+  "A": {
+    "zhCn": "搜索服务",
+    "en": "Shopping"
+  },
+  "B": {
+    "zhCn": "航班信息",
+    "en": "Flight"
+  },
+  "C": {
+    "zhCn": "运价计算",
+    "en": "Pricing"
+  },
+  "D": {
+    "zhCn": "预定服务",
+    "en": "Booking"
+  },
+  "E": {
+    "zhCn": "客票服务",
+    "en": "Ticket"
+  },
+  "EB": {
+    "zhCn": "多合一",
+    "en": "Unified"
+  },
+  "F": {
+    "zhCn": "延伸服务",
+    "en": "Extensive Service"
+  },
+  "G": {
+    "zhCn": "廉价航空",
+    "en": "LCC"
+  },
+  "N": {
+    "zhCn": "附加服务NewEMD",
+    "en": "NewEMD"
+  },
+  "T": {
+    "zhCn": "AGG",
+    "en": "AGG"
+  },
+  "X": {
+    "zhCn": "电子发票",
+    "en": "Electronic Invoice"
+  }
+}

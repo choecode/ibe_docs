@@ -1,0 +1,35 @@
+{
+  "code": 200,
+  "msg": "处理成功！",
+  "data": {
+    "id": "24609489278730269",
+    "apiCode": "C76",
+    "apiNameEn": "AirFareMileageSingleCityPair",
+    "apiNameCn": "国际单城市对里程查询",
+    "introduce": "国际单一城市对里程查询接口用于查询航段中的起飞到达城市之间的里程数据，对应黑屏的XSFSO指令。",
+    "business": "查询航段中的起飞到达城市之间的里程数据。",
+    "functions": "查询航段中的起飞到达城市之间的里程数据。",
+    "requestSchema": "[{\"name\":\"office\\t\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"Office号\",\"children\":[]},{\"name\":\"departure\\t\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"降落城市/机场三字码\",\"children\":[]},{\"name\":\"arrival\\t\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"降落城市/机场三字码\",\"children\":[]}]",
+    "responseSchema": "[{\"name\":\"mileageDatas\\t\",\"type\":\"array\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"里程数据\",\"children\":[{\"name\":\"item\\t\",\"type\":\"object\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"\",\"children\":[{\"name\":\"gi\\t\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"旅行方向\",\"children\":[]},{\"name\":\"mpm\\t\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"MPM里程数\",\"children\":[]},{\"name\":\"tpm\\t\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"TPM里程数\",\"children\":[]}]}]}]",
+    "errorCodes": "[{\"code\":\" 403 \",\"name\":null,\"msg\":null,\"msgZh\":\" 用户名、密码、IP错误或无权限 \"},{\"code\":\" -303 \",\"name\":null,\"msg\":\" inner service error \",\"msgZh\":\" 内部服务异常 \"},{\"code\":\" -304 \",\"name\":null,\"msg\":\" sending commands too fast, try again later \",\"msgZh\":\" 访问速度过快,请稍后再试 \"},{\"code\":\" -305 \",\"name\":null,\"msg\":\" transaction times limited \",\"msgZh\":\" 访问次数限制 \"},{\"code\":\" -301 \",\"name\":null,\"msg\":\" office permission denied \",\"msgZh\":\" Office 没有权限 \"},{\"code\":\" -390 \",\"name\":null,\"msg\":\" IBE Service Error \",\"msgZh\":\" IBE服务异常 \"},{\"code\":\" -311 \",\"name\":null,\"msg\":\" time out, please try again later \",\"msgZh\":\" 操作超时，请稍后再试 \"},{\"code\":\" -306 \",\"name\":null,\"msg\":\" too many concurrent request for service \",\"msgZh\":\" 访问频率限制 \"},{\"code\":\" -1 \",\"name\":null,\"msg\":\" Biz Error \",\"msgZh\":\" 业务异常 \"},{\"code\":\" -402 \",\"name\":null,\"msg\":\" Input error! \",\"msgZh\":\" 输入参数出错 \"}]",
+    "createTime": "2025-09-29T15:17:17.000+08:00",
+    "createUser": "ylzhu",
+    "updateTime": "2025-09-29T15:19:56.000+08:00",
+    "updateUser": "ylzhu",
+    "qaApiDemos": [
+      {
+        "id": "24609736560214945",
+        "apiDocId": 24609489278730269,
+        "seqNumber": 1,
+        "demoDesc": "样例描述",
+        "request": "{\n\t\"office\": \"SHA384\",\n\t\"departure\": \"PEK\",\n\t\"arrival\": \"NYC\"\n}",
+        "response": "{\n\t\"office\": \"SHA384\",\n\t\"departure\": \"PEK\",\n\t\"arrival\": \"NYC\"\n}",
+        "createTime": "2025-09-29T15:21:13.000+08:00",
+        "createUser": "ylzhu",
+        "updateTime": null,
+        "updateUser": null
+      }
+    ],
+    "url": "/xml/AirFareMileageSingleCityPair"
+  }
+}

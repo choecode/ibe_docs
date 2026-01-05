@@ -1,0 +1,119 @@
+{
+  "code": 200,
+  "msg": "处理成功！",
+  "data": {
+    "id": "17278721840907038",
+    "apiCode": "C63",
+    "apiNameEn": "AirPNRUpdate",
+    "apiNameCn": "手工PNR更新接口",
+    "introduce": "手工PNR更新支持用户一次性更新PNR中的FC、FN、FP、EI以及tour code和RMK各项。\r\n目前仅用于手工出票前，针对需要输入的运价项的传入，不支持联动修改和删除。传入运价项后只能手工出票，无法自动出票。",
+    "business": "提供的服务范围为手工出票前，将各个运价项传入PNR的操作，目前只支持传入，不支持各项的删除以及修改，如需要修改，可以调用D2-AirBookModify的按行删除之后，再通过此服务完成重新添加。",
+    "functions": "1. 支持传入FC项\n2. 支持传入FN项\n3. 支持传入FP项文本\n4. 支持传入EI项\n5. 支持传入TC项\n6. 支持传入RMK文本",
+    "requestSchema": "[{\"name\":\"TES_AirPNRUpdateRQ\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"手工PNR更新请求\",\"children\":[{\"name\":\"POS\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"？\",\"children\":[{\"name\":\"Source\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"请求者信息\",\"children\":[{\"name\":\"@PseudoCityCode\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"Office号\",\"children\":[]}]}]},{\"name\":\"BookingReferenceID\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"PNR号信息\",\"children\":[{\"name\":\"@ID\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"PNR\",\"children\":[]}]},{\"name\":\"FCInfos\",\"type\":\"object\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"FC项\",\"children\":[{\"name\":\"FCInfo\",\"type\":\"array\",\"quantity\":\"0..n\",\"default\":\"\",\"description\":\"\",\"children\":[{\"name\":\"FC\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"FC横式信息：手动输入FC完整指令\",\"children\":[]},{\"name\":\"PassengerNames\",\"type\":\"object\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"旅客姓名列表\",\"children\":[{\"name\":\"PassengerName\",\"type\":\"string\",\"quantity\":\"0..n\",\"default\":\"\",\"description\":\"旅客姓名\",\"children\":[]}]},{\"name\":\"Infant\",\"type\":\"boolean\",\"quantity\":\"1\",\"default\":\"false\",\"description\":\"婴儿标识\",\"children\":[]}]}]},{\"name\":\"FNInfos\",\"type\":\"object\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"FN项\",\"children\":[{\"name\":\"FNInfo\",\"type\":\"array\",\"quantity\":\"0..n\",\"default\":\"\",\"description\":\"\",\"children\":[{\"name\":\"FN\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"fn指令\",\"children\":[]},{\"name\":\"Infant\",\"type\":\"boolean\",\"quantity\":\"0..1\",\"default\":\"false\",\"description\":\"婴儿标识\",\"children\":[]},{\"name\":\"PassengerNames\",\"type\":\"object\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"旅客姓名组\",\"children\":[{\"name\":\"PassengerName\",\"type\":\"string\",\"quantity\":\"0..n\",\"default\":\"\",\"description\":\"旅客姓名\",\"children\":[]}]}]}]},{\"name\":\"FPInfos\",\"type\":\"object\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"FP项\",\"children\":[{\"name\":\"FPInfo\",\"type\":\"array\",\"quantity\":\"0..n\",\"default\":\"\",\"description\":\"\",\"children\":[{\"name\":\"FP\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"手动输入FP完整指令\",\"children\":[]},{\"name\":\"PassengerNames\",\"type\":\"array\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"旅客姓名列表\",\"children\":[{\"name\":\"PassengerName\",\"type\":\"string\",\"quantity\":\"0..n\",\"default\":\"\",\"description\":\"\",\"children\":[]}]},{\"name\":\"CurrencyCode\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"货币种类，如CNY\",\"children\":[]},{\"name\":\"Infant\",\"type\":\"boolean\",\"quantity\":\"0..1\",\"default\":\"false\",\"description\":\"婴儿标识\",\"children\":[]},{\"name\":\"PaymentType\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"支付类型，如CASH\",\"children\":[]},{\"name\":\"OtherInfo\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"自由文本\",\"children\":[]}]}]},{\"name\":\"EIInfos\",\"type\":\"object\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"EI项\",\"children\":[{\"name\":\"EIInfo\",\"type\":\"array\",\"quantity\":\"0..n\",\"default\":\"\",\"description\":\"\",\"children\":[{\"name\":\"Endorse\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"签注信息\",\"children\":[]},{\"name\":\"PassengerName\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"\",\"children\":[]},{\"name\":\"Infant\",\"type\":\"boolean\",\"quantity\":\"0..1\",\"default\":\"false\",\"description\":\"婴儿标识\",\"children\":[]},{\"name\":\"InputCode\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"\",\"children\":[]}]}]},{\"name\":\"TCInfos\",\"type\":\"object\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"TC项\",\"children\":[{\"name\":\"TCInfo\",\"type\":\"array\",\"quantity\":\"0..n\",\"default\":\"\",\"description\":\"\",\"children\":[{\"name\":\"Infant\",\"type\":\"boolean\",\"quantity\":\"0..1\",\"default\":\"false\",\"description\":\"婴儿标识\",\"children\":[]},{\"name\":\"FreeCode\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"自由格式TC\",\"children\":[]},{\"name\":\"TC\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"标准格式TC\",\"children\":[]},{\"name\":\"PassengerName\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"\",\"children\":[]},{\"name\":\"InputCode\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"\",\"children\":[]}]}]},{\"name\":\"RMKInfos\",\"type\":\"object\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"RMK项\",\"children\":[{\"name\":\"RMKInfo\",\"type\":\"array\",\"quantity\":\"0..n\",\"default\":\"\",\"description\":\"\",\"children\":[{\"name\":\"InputCode\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"\",\"children\":[]},{\"name\":\"RemarkType\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"备注类型\",\"children\":[]},{\"name\":\"RemarkInfo\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"备注信息\",\"children\":[]},{\"name\":\"PassengerName\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"\",\"children\":[]},{\"name\":\"RefTxnId\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"\",\"children\":[]},{\"name\":\"Infant\",\"type\":\"boolean\",\"quantity\":\"0..1\",\"default\":\"false\",\"description\":\"婴儿标识\",\"children\":[]}]}]},{\"name\":\"@ModificationInfo\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"封口方式\",\"children\":[]}]}]",
+    "responseSchema": "[{\"name\":\"TES_AirPNRUpdateRS\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"手工PNR更新返回\",\"children\":[{\"name\":\"Errors\",\"type\":\"array\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"错误信息：？\",\"children\":[{\"name\":\"Error\",\"type\":\"array\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"？：？\",\"children\":[{\"name\":\"Trace\",\"type\":\"array\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"错误详细描述或者内部异常信息\",\"children\":[{\"name\":\"@Text\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"文本\",\"children\":[]}]},{\"name\":\"@Code\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"错误代码\",\"children\":[]},{\"name\":\"@Type\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"错误类型\",\"children\":[]},{\"name\":\"@ShortText\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"错误详细信息英文\",\"children\":[]},{\"name\":\"@ShortTextZH\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"错误详细信息中文\",\"children\":[]}]}]},{\"name\":\"Result\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"返回：返回，如OK\",\"children\":[]}]}]",
+    "errorCodes": "[{\"code\":403,\"name\":\"\",\"msg\":\"\",\"msgZh\":\" 用户名、密码、IP错误或无权限 \"},{\"code\":-303,\"name\":\"\",\"msg\":\" inner service error \",\"msgZh\":\" 内部服务异常 \"},{\"code\":-301,\"name\":\"\",\"msg\":\" office prermission denied \",\"msgZh\":\" 没有office权限 \"},{\"code\":-402,\"name\":\"\",\"msg\":\" input error \",\"msgZh\":\" 输入错误 \"}]",
+    "createTime": "2025-07-10T17:17:53.000+08:00",
+    "createUser": "jiangdequan",
+    "updateTime": "2025-11-25T16:08:37.000+08:00",
+    "updateUser": "ylzhu",
+    "qaApiDemos": [
+      {
+        "id": "22258171206697842",
+        "apiDocId": 17278721840907038,
+        "seqNumber": 1,
+        "demoDesc": "手工PNR更新.xml",
+        "request": "<TES_AirPNRUpdateRQ>\r\n    <POS>\r\n        <Source PseudoCityCode=\"BJS191\"/>\r\n    </POS>\r\n    <BookingReferenceID ID=\"KWWW0B\"/>\r\n    <FCInfos>\r\n        <FCInfo>\r\n            <FC>FC:BKK LX ZRH 1000.00Y CNY1000.00END</FC>\r\n            <PassengerNames>\r\n                <PassengerName>ZHOU/XIAO</PassengerName>\r\n            </PassengerNames>\r\n            <Infant>false</Infant>\r\n        </FCInfo>\r\n    </FCInfos>\r\n    <FNInfos>\r\n        <FNInfo>\r\n            <FN>FN/FCNY10.00/SCNY10.00/C3.00/TCNY50.00CN/TCNY60.00YQ</FN>\r\n            <Infant>false</Infant>\r\n            <PassengerNames>\r\n                <PassengerName>ZHOU/XIAO</PassengerName>\r\n            </PassengerNames>\r\n        </FNInfo>\r\n    </FNInfos>\r\n    <FPInfos>\r\n        <FPInfo>\r\n            <CurrencyCode>CNY</CurrencyCode>\r\n            <Infant>false</Infant>\r\n            <PaymentType>CASH</PaymentType>\r\n            <OtherInfo>自由文本信息</OtherInfo>\r\n            <PassengerNames>\r\n                <PassengerName>ZHOU/XIAO</PassengerName>\r\n            </PassengerNames>\r\n        </FPInfo>\r\n    </FPInfos>\r\n    <EIInfos>\r\n        <EIInfo>\r\n            <Endorse>endorse</Endorse>\r\n            <PassengerName>ZHOU/XIAO</PassengerName>\r\n            <Infant>false</Infant>\r\n        </EIInfo>\r\n    </EIInfos>\r\n    <TCInfos>\r\n        <TCInfo>\r\n            <Infant>false</Infant>\r\n            <TC>IT1CA1BJS191</TC>\r\n            <PassengerName>ZHOU/XIAO</PassengerName>\r\n        </TCInfo>\r\n    </TCInfos>\r\n    <RMKInfos>\r\n        <RMKInfo>\r\n            <RemarkType>remarkType</RemarkType>\r\n            <RemarkInfo>remarkInfo</RemarkInfo>\r\n            <PassengerName>ZHOU/XIAO</PassengerName>\r\n            <Infant>false</Infant>\r\n        </RMKInfo>\r\n    </RMKInfos>\r\n</TES_AirPNRUpdateRQ>",
+        "response": "<TES_AirPNRUpdateRS>\n    <Result>OK</Result>\n</TES_AirPNRUpdateRS>",
+        "createTime": "2025-09-03T16:24:06.000+08:00",
+        "createUser": "jiangdequan",
+        "updateTime": "2025-09-16T09:43:04.000+08:00",
+        "updateUser": "syke"
+      },
+      {
+        "id": "22258171278000703",
+        "apiDocId": 17278721840907038,
+        "seqNumber": 2,
+        "demoDesc": "添加EI.xml",
+        "request": "<TES_AirPNRUpdateRQ>\r\n    <POS>\r\n        <Source PseudoCityCode=\"BJS191\"/>\r\n    </POS>\r\n    <BookingReferenceID ID=\"HPTD08\"/>\r\n    <EIInfos>\r\n        <EIInfo>\r\n            <Endorse>endorse</Endorse>\r\n            <PassengerName>ZHOU/XIAO</PassengerName>\r\n            <Infant>false</Infant>\r\n        </EIInfo>\r\n    </EIInfos>\r\n</TES_AirPNRUpdateRQ>",
+        "response": "<TES_AirPNRUpdateRS>\n    <Result>OK</Result>\n</TES_AirPNRUpdateRS>",
+        "createTime": "2025-09-16T13:24:06.000+08:00",
+        "createUser": "jiangdequan",
+        "updateTime": "2025-09-16T09:43:09.000+08:00",
+        "updateUser": "syke"
+      },
+      {
+        "id": "22258171348255536",
+        "apiDocId": 17278721840907038,
+        "seqNumber": 3,
+        "demoDesc": "添加FC.xml",
+        "request": "<TES_AirPNRUpdateRQ>\r\n    <POS>\r\n        <Source PseudoCityCode=\"BJS191\"/>\r\n    </POS>\r\n    <BookingReferenceID ID=\"HPTD08\"/>\r\n    <FCInfos>\r\n        <FCInfo>\r\n            <FC>FC:BKK LX ZRH 1000.00Y CNY1000.00END</FC>\r\n            <PassengerNames>\r\n                <PassengerName>ZHOU/XIAO</PassengerName>\r\n            </PassengerNames>\r\n            <Infant>false</Infant>\r\n        </FCInfo>\r\n    </FCInfos>\r\n</TES_AirPNRUpdateRQ>",
+        "response": "<TES_AirPNRUpdateRS>\n    <Result>OK</Result>\n</TES_AirPNRUpdateRS>",
+        "createTime": "2025-09-03T16:24:06.000+08:00",
+        "createUser": "jiangdequan",
+        "updateTime": "2025-09-16T09:43:12.000+08:00",
+        "updateUser": "syke"
+      },
+      {
+        "id": "22258171416413159",
+        "apiDocId": 17278721840907038,
+        "seqNumber": 4,
+        "demoDesc": "添加FN.xml",
+        "request": "<TES_AirPNRUpdateRQ>\r\n    <POS>\r\n        <Source PseudoCityCode=\"BJS191\"/>\r\n    </POS>\r\n    <BookingReferenceID ID=\"HPTD08\"/>\r\n    <FNInfos>\r\n        <FNInfo>\r\n            <FN>FN/FCNY10.00/SCNY10.00/C3.00/TCNY50.00CN/TCNY60.00YQ</FN>\r\n            <PassengerNames>\r\n                <PassengerName>ZHOU/XIAO</PassengerName>\r\n            </PassengerNames>\r\n            <Infant>false</Infant>\r\n        </FNInfo>\r\n    </FNInfos>\r\n</TES_AirPNRUpdateRQ>",
+        "response": "<TES_AirPNRUpdateRS>\n    <Result>OK</Result>\n</TES_AirPNRUpdateRS>",
+        "createTime": "2025-09-03T16:24:06.000+08:00",
+        "createUser": "jiangdequan",
+        "updateTime": "2025-09-16T09:43:16.000+08:00",
+        "updateUser": "syke"
+      },
+      {
+        "id": "22258171485618358",
+        "apiDocId": 17278721840907038,
+        "seqNumber": 5,
+        "demoDesc": "添加FP.xml",
+        "request": "<TES_AirPNRUpdateRQ>\r\n    <POS>\r\n        <Source PseudoCityCode=\"BJS191\"/>\r\n    </POS>\r\n    <BookingReferenceID ID=\"HPTD08\"/>\r\n    <FPInfos>\r\n        <FPInfo>\r\n            <CurrencyCode>CNY</CurrencyCode>\r\n            <Infant>false</Infant>\r\n            <PaymentType>CASH</PaymentType>\r\n            <OtherInfo>自由文本信息</OtherInfo>\r\n            <PassengerNames>\r\n                <PassengerName>ZHOU/XIAO</PassengerName>\r\n            </PassengerNames>\r\n        </FPInfo>\r\n    </FPInfos>\r\n</TES_AirPNRUpdateRQ>",
+        "response": "<TES_AirPNRUpdateRS>\n    <Result>OK</Result>\n</TES_AirPNRUpdateRS>",
+        "createTime": "2025-09-03T16:24:06.000+08:00",
+        "createUser": "jiangdequan",
+        "updateTime": "2025-09-16T09:43:19.000+08:00",
+        "updateUser": "syke"
+      },
+      {
+        "id": "22258171553776337",
+        "apiDocId": 17278721840907038,
+        "seqNumber": 6,
+        "demoDesc": "添加FP原文.xml",
+        "request": "<TES_AirPNRUpdateRQ>\r\n    <POS>\r\n        <Source PseudoCityCode=\"BJS191\"/>\r\n    </POS>\r\n    <BookingReferenceID ID=\"JM6D07\"/>\r\n    <FPInfos>\r\n        <FPInfo>\r\n            <FP>FP:CASH,CNY</FP>\r\n            <PassengerNames>\r\n                <PassengerName>ZHOU/XIAO</PassengerName>\r\n            </PassengerNames>\r\n        </FPInfo>\r\n    </FPInfos>\r\n</TES_AirPNRUpdateRQ>",
+        "response": "<TES_AirPNRUpdateRS>\n    <Result>OK</Result>\n</TES_AirPNRUpdateRS>",
+        "createTime": "2025-09-03T16:24:06.000+08:00",
+        "createUser": "jiangdequan",
+        "updateTime": "2025-09-16T09:43:23.000+08:00",
+        "updateUser": "syke"
+      },
+      {
+        "id": "22258171639759482",
+        "apiDocId": 17278721840907038,
+        "seqNumber": 7,
+        "demoDesc": "添加RMK.xml",
+        "request": "<TES_AirPNRUpdateRQ>\r\n    <POS>\r\n        <Source PseudoCityCode=\"BJS191\"/>\r\n    </POS>\r\n    <BookingReferenceID ID=\"HPTD08\"/>\r\n    <RMKInfos>\r\n        <RMKInfo>\r\n            <RemarkType>remarkType</RemarkType>\r\n            <RemarkInfo>remarkInfo</RemarkInfo>\r\n            <PassengerName>ZHOU/XIAO</PassengerName>\r\n            <Infant>false</Infant>\r\n        </RMKInfo>\r\n    </RMKInfos>\r\n</TES_AirPNRUpdateRQ>",
+        "response": "<TES_AirPNRUpdateRS>\n    <Result>OK</Result>\n</TES_AirPNRUpdateRS>",
+        "createTime": "2025-09-03T16:24:06.000+08:00",
+        "createUser": "jiangdequan",
+        "updateTime": "2025-09-16T09:43:27.000+08:00",
+        "updateUser": "syke"
+      },
+      {
+        "id": "22258171707917179",
+        "apiDocId": 17278721840907038,
+        "seqNumber": 8,
+        "demoDesc": "添加TC.xml",
+        "request": "<TES_AirPNRUpdateRQ>\r\n    <POS>\r\n        <Source PseudoCityCode=\"BJS191\"/>\r\n    </POS>\r\n    <BookingReferenceID ID=\"HPTD08\"/>\r\n    <TCInfos>\r\n        <TCInfo>\r\n            <Infant>false</Infant>\r\n            <TC>IT1CA1BJS191</TC>\r\n            <PassengerName>ZHOU/XIAO</PassengerName>\r\n        </TCInfo>\r\n    </TCInfos>\r\n</TES_AirPNRUpdateRQ>",
+        "response": "<TES_AirPNRUpdateRS>\n    <Result>OK</Result>\n</TES_AirPNRUpdateRS>",
+        "createTime": "2025-09-03T16:24:06.000+08:00",
+        "createUser": "jiangdequan",
+        "updateTime": "2025-09-16T09:43:30.000+08:00",
+        "updateUser": "syke"
+      }
+    ],
+    "url": "/xml/AirPNRUpdate"
+  }
+}

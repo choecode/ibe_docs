@@ -1,0 +1,35 @@
+{
+  "code": 200,
+  "msg": "处理成功！",
+  "data": {
+    "id": "17278748556525810",
+    "apiCode": "D31",
+    "apiNameEn": "AirPNRAuthPull",
+    "apiNameCn": "PNR收回授权",
+    "introduce": "如责任组 office 调用 Push 接口给被授权 OFFC 授权后，能通过本接口对该 PNR 收回授权，如果是包含读写权限的 PNR 授权，可以通过调用该接口收回 PNR 的全部授权或只收回写权限，保留读权限。",
+    "business": "收回PNR授权",
+    "functions": "收回 PNR 授权",
+    "requestSchema": "[{\"name\":\"TES_AirPnrAuthPullRQ\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"\",\"children\":[{\"name\":\"POS\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"Point Of Sale\",\"children\":[{\"name\":\"Source\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"请求者信息\",\"children\":[{\"name\":\"@PayType\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"PayType\",\"children\":[]},{\"name\":\"@ChannelID\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"ChannelID\",\"children\":[]},{\"name\":\"@IataCode\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"IataCode\",\"children\":[]},{\"name\":\"@CityCode\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"城市代码\",\"children\":[]},{\"name\":\"@PseudoCityCode\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"伪城市代码（Office代码：PKE099）\",\"children\":[]}]}]},{\"name\":\"PullAuthorityParam\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"\",\"children\":[{\"name\":\"@PassengerNameRecord\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"PNR号\",\"children\":[]},{\"name\":\"@PullWritePermissionOnly\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"收回写权限\",\"children\":[]},{\"name\":\"@OrderId\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"orderId\",\"children\":[]}]}]}]",
+    "responseSchema": "[{\"name\":\"TES_AirPnrAuthPullRS\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"PNR授权收回返回\",\"children\":[{\"name\":\"Errors\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"错误信息集合\",\"children\":[{\"name\":\"Error\",\"type\":\"array\",\"quantity\":\"0..n\",\"default\":\"\",\"description\":\"错误信息\",\"children\":[{\"name\":\"Trace\",\"type\":\"array\",\"quantity\":\"0..n\",\"default\":\"\",\"description\":\"错误详细描述或者内部异常信息\",\"children\":[{\"name\":\"@Code\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"编码\",\"children\":[]},{\"name\":\"@Text\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"文本\",\"children\":[]}]},{\"name\":\"@Code\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"错误代码\",\"children\":[]},{\"name\":\"@Type\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"错误类型\",\"children\":[]},{\"name\":\"@ShortText\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"错误描述信息(英文)\",\"children\":[]},{\"name\":\"@ShortTextZH\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"错误描述信息(中文)\",\"children\":[]}]}]},{\"name\":\"Warnings\",\"type\":\"array\",\"quantity\":\"0..n\",\"default\":\"\",\"description\":\"警告信息集合\",\"children\":[{\"name\":\"Warning\",\"type\":\"array\",\"quantity\":\"0..n\",\"default\":\"\",\"description\":\"警告信息\",\"children\":[{\"name\":\"@Type\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"警告类型\",\"children\":[]},{\"name\":\"@ShortText\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"警告详细信息\",\"children\":[]},{\"name\":\"@Code\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"警告代码\",\"children\":[]}]}]},{\"name\":\"Response\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"\",\"children\":[{\"name\":\"Result\",\"type\":\"array\",\"quantity\":\"0..n\",\"default\":\"\",\"description\":\"\",\"children\":[{\"name\":\"PassengerNameRecord\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"PNR 号\",\"children\":[]}]}]}]}]",
+    "errorCodes": "[{\"code\":\" -303 \",\"name\":null,\"msg\":\" inner service error \",\"msgZh\":\" 内部服务异常 \"},{\"code\":\" -304 \",\"name\":null,\"msg\":\" sending commands too fast, try again later \",\"msgZh\":\" 访问速度过快,请稍后再试 \"},{\"code\":\" -305 \",\"name\":null,\"msg\":\" transaction times limited \",\"msgZh\":\" 访问次数限制 \"},{\"code\":\" -301 \",\"name\":null,\"msg\":\" office permission denied \",\"msgZh\":\" Office 没有权限 \"},{\"code\":\" -390 \",\"name\":null,\"msg\":\" IBE Service Error \",\"msgZh\":\" IBE服务异常 \"},{\"code\":\" -311 \",\"name\":null,\"msg\":\" time out, please try again later \",\"msgZh\":\" 操作超时，请稍后再试 \"},{\"code\":\" -306 \",\"name\":null,\"msg\":\" too many concurrent request for service \",\"msgZh\":\" 访问频率限制 \"},{\"code\":\" -1 \",\"name\":null,\"msg\":\" Biz Error \",\"msgZh\":\" 业务异常 \"},{\"code\":\" -402 \",\"name\":null,\"msg\":\" Input error! \",\"msgZh\":\" 输入参数出错 \"}]",
+    "createTime": "2025-07-10T17:18:18.000+08:00",
+    "createUser": "jiangdequan",
+    "updateTime": "2025-11-06T15:11:02.000+08:00",
+    "updateUser": "zjhe",
+    "qaApiDemos": [
+      {
+        "id": "22258579732955917",
+        "apiDocId": 17278748556525810,
+        "seqNumber": 1,
+        "demoDesc": "PNR收回授权.xml",
+        "request": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<TES_AirPnrAuthPullRQ>\r\n    <POS>\r\n        <!-- Office号 -->\r\n        <Source PseudoCityCode=\"SHA384\"/>\r\n    </POS>\r\n    <PullAuthorityParam PassengerNameRecord=\"JMGEBW\" OrderId=\"\" PullWritePermissionOnly=\"\"/>\r\n</TES_AirPnrAuthPullRQ>",
+        "response": null,
+        "createTime": "2025-09-03T16:30:35.000+08:00",
+        "createUser": "jiangdequan",
+        "updateTime": null,
+        "updateUser": null
+      }
+    ],
+    "url": "/xml/AirPNRAuthPull"
+  }
+}

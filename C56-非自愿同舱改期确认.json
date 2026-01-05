@@ -1,0 +1,35 @@
+{
+  "code": 200,
+  "msg": "处理成功！",
+  "data": {
+    "id": "17278717086663017",
+    "apiCode": "C56",
+    "apiNameEn": "AirInvoluntaryReissue",
+    "apiNameCn": "非自愿同舱改期确认",
+    "introduce": "该接口用于实现国内非自愿同舱改期确认，对应黑屏指令IRR。",
+    "business": "国内",
+    "functions": "该接口用于实现国内非自愿同舱改期确认功能，对应黑屏指令IRR，前序接口为A8或A11国内客票变更搜索。该接口请求中SerialNo字段依赖于A8或A11接口返回。",
+    "requestSchema": "[{\"name\":\"TES_AirInvoluntaryReissueRQ\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"非自愿同舱改期确认请求\",\"children\":[{\"name\":\"POS\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"？\",\"children\":[{\"name\":\"Source\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"请求者信息\",\"children\":[{\"name\":\"@PseudoCityCode\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"Office号\",\"children\":[]}]}]},{\"name\":\"FareParameters\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"搜索运价的结果信息\",\"children\":[{\"name\":\"FareParameter\",\"type\":\"array\",\"quantity\":\"0..n\",\"default\":\"\",\"description\":\"搜索运价的结果信息\",\"children\":[{\"name\":\"PsgIndex\",\"type\":\"int\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"旅客序号，从1开始\",\"children\":[]},{\"name\":\"SerialNo\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"第一步查询结果的运价序列号\",\"children\":[]},{\"name\":\"AvBindingIndex\",\"type\":\"int\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"AvBindingIndex\",\"children\":[]},{\"name\":\"Fp\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"Fp\",\"children\":[]},{\"name\":\"Involuntary\",\"type\":\"boolean\",\"quantity\":\"1\",\"default\":\"false\",\"description\":\"非自愿标识\",\"children\":[]},{\"name\":\"TktNo\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"票号\",\"children\":[]},{\"name\":\"CouponNumber\",\"type\":\"int\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"设置要改期的航段在票面里的航段序号\",\"children\":[]},{\"name\":\"PnrDisconnected\",\"type\":\"boolean\",\"quantity\":\"1\",\"default\":\"false\",\"description\":\"设置票航段与PNR是否已经失去关联\",\"children\":[]},{\"name\":\"SplitPnr\",\"type\":\"boolean\",\"quantity\":\"1\",\"default\":\"false\",\"description\":\"是否分离PNR\",\"children\":[]}]}]},{\"name\":\"NewPnr\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"新PNR\",\"children\":[]},{\"name\":\"ToDeleteSegIndexes\",\"type\":\"array\",\"quantity\":\"0..n\",\"default\":\"\",\"description\":\"需要删除的旧航段序号\",\"children\":[{\"name\":\"ToDeleteSegIndex\",\"type\":\"int\",\"quantity\":\"0..n\",\"default\":\"\",\"description\":\"需要删除的旧航段序号\",\"children\":[]}]},{\"name\":\"IcsPnr\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"Ics PNR\",\"children\":[]},{\"name\":\"SplitPnr\",\"type\":\"boolean\",\"quantity\":\"1\",\"default\":\"false\",\"description\":\"是否分离PNR，取值为true/false\",\"children\":[]}]}]",
+    "responseSchema": "[{\"name\":\"TES_AirInvoluntaryReissueRS\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"非自愿同舱改期确认返回\",\"children\":[{\"name\":\"Errors\",\"type\":\"array\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"错误信息\",\"children\":[{\"name\":\"Error\",\"type\":\"array\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"\",\"children\":[{\"name\":\"Trace\",\"type\":\"array\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"错误详细描述或者内部异常信息\",\"children\":[{\"name\":\"@Code\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"编码\",\"children\":[]},{\"name\":\"@Text\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"文本\",\"children\":[]}]},{\"name\":\"@Code\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"错误代码\",\"children\":[]},{\"name\":\"@Type\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"错误类型\",\"children\":[]},{\"name\":\"@ShortText\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"错误详细信息英文\",\"children\":[]},{\"name\":\"@ShortTextZH\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"错误详细信息中文\",\"children\":[]}]}]},{\"name\":\"Result\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"返回：返回，如OK\",\"children\":[]}]}]",
+    "errorCodes": "[{\"code\":\" 403 \",\"name\":null,\"msg\":null,\"msgZh\":\" 用户名、密码、IP错误或无权限 \"},{\"code\":\" -303 \",\"name\":null,\"msg\":\" inner service error \",\"msgZh\":\" 内部服务异常 \"},{\"code\":\" -301 \",\"name\":null,\"msg\":\" office prermission denied \",\"msgZh\":\" 没有office权限 \"},{\"code\":\" -402 \",\"name\":null,\"msg\":\" input error \",\"msgZh\":\" 输入错误 \"}]",
+    "createTime": "2025-07-10T17:17:48.000+08:00",
+    "createUser": "jiangdequan",
+    "updateTime": "2025-12-04T14:56:57.000+08:00",
+    "updateUser": "syke",
+    "qaApiDemos": [
+      {
+        "id": "22258145494565313",
+        "apiDocId": 17278717086663017,
+        "seqNumber": 1,
+        "demoDesc": "非自愿同舱改期确认.xml",
+        "request": "<TES_AirInvoluntaryReissueRQ>\r\n    <POS>\r\n        <Source PseudoCityCode=\"SHA384\"/>\r\n    </POS>\r\n    <FareParameters>\r\n        <FareParameter>\r\n            <PsgIndex>1</PsgIndex>\r\n            <SerialNo>ldsha384r3_ReshopD2025011309232179274575</SerialNo>\r\n            <AvBindingIndex>1</AvBindingIndex>\r\n            <Involuntary>true</Involuntary>\r\n            <TktNo>999-3801349794</TktNo>\r\n            <CouponNumber>1</CouponNumber>\r\n            <PnrDisconnected>false</PnrDisconnected>\r\n        </FareParameter>\r\n    </FareParameters>\r\n    <NewPnr>HNWW7S</NewPnr>\r\n    <ToDeleteSegIndexes>\r\n        <ToDeleteSegIndex>2</ToDeleteSegIndex>\r\n    </ToDeleteSegIndexes>\r\n    <IcsPnr>PFBCPT</IcsPnr>\r\n</TES_AirInvoluntaryReissueRQ>",
+        "response": null,
+        "createTime": "2025-09-03T16:23:41.000+08:00",
+        "createUser": "jiangdequan",
+        "updateTime": null,
+        "updateUser": null
+      }
+    ],
+    "url": "/xml/AirInvoluntaryReissue"
+  }
+}

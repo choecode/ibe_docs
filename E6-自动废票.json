@@ -1,0 +1,71 @@
+{
+  "code": 200,
+  "msg": "处理成功！",
+  "data": {
+    "id": "17279178304913546",
+    "apiCode": "E6",
+    "apiNameEn": "AirTicketVoid",
+    "apiNameCn": "自动废票",
+    "introduce": "自动废票服务是在线分销平台上的一个自动化操作环节的重要服务，提供销售环节的服务功能。  \r\n自动废票服务(AirTicketVoid)提供的服务是：在航信在线分销平台上，根据客户请求，对已出票的PNR进行废票的功能，主要涉及到废票。\r\n需要注意的是：\r\n作废操作只能在出票当天使用， 并且在执行作废操作前必须保证所指定的打票机没有被其他的PID建控，\r\n作废操作会自动对打票机进行建控卸控操作。\r\n客票作废成功后，应注意将所订的PNR删除或者重新出票",
+    "business": "本接口实现自动废票的功能。",
+    "functions": "本版本支持的自动废票场景是：\r\n非订单直接废票。\r\n非订单BOP废票。\r\n非订单AL本票废票。",
+    "requestSchema": "[{\"name\":\"OTA_AirTicketVoidRQ\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"航空作废电子客票请求信息\",\"children\":[{\"name\":\"POS\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"Point Of Sale\",\"children\":[{\"name\":\"Source\",\"type\":\"array\",\"quantity\":\"0..n\",\"default\":\"\",\"description\":\"资源信息\",\"children\":[{\"name\":\"@PseudoCityCode\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"Office号\",\"children\":[]},{\"name\":\"@OtherID\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"其他ID\",\"children\":[]}]}]},{\"name\":\"TicketVoidDetail\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"废票信息\",\"children\":[{\"name\":\"BookingReferenceID\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"订单号或PNR号信息\",\"children\":[{\"name\":\"@ID\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"订单号或PNR号\",\"children\":[]},{\"name\":\"@ID_Context\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"类别\",\"children\":[]}]},{\"name\":\"TicketItemInfo\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"票号信息\",\"children\":[{\"name\":\"@TicketNumber\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"票号\",\"children\":[]},{\"name\":\"@EndTicketNumber\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"结束票号（联票）\",\"children\":[]}]},{\"name\":\"IsBOP\",\"type\":\"boolean\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"BOP客票标识：当票证类型不填，BOP客票标识为true时，同样做BOP废票操作\",\"children\":[]}]},{\"name\":\"@TicketType\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"票证类型：支持BSP、AL（本票）、BOP。若不填写，则按照BSP票处理。\",\"children\":[]}]}]",
+    "responseSchema": "[{\"name\":\"OTA_AirTicketVoidRS\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"航空作废电子客票响应信息\",\"children\":[{\"name\":\"Success\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"\",\"children\":[]},{\"name\":\"Warnings\",\"type\":\"array\",\"quantity\":\"0..n\",\"default\":\"\",\"description\":\"警告信息集合\",\"children\":[{\"name\":\"Warning\",\"type\":\"array\",\"quantity\":\"0..n\",\"default\":\"\",\"description\":\"警告信息\",\"children\":[{\"name\":\"Trace\",\"type\":\"array\",\"quantity\":\"0..n\",\"default\":\"\",\"description\":\"错误详细描述或者内部异常信息\",\"children\":[{\"name\":\"@Code\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"编码\",\"children\":[]},{\"name\":\"@Text\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"文本\",\"children\":[]}]},{\"name\":\"@Code\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"警告代码(数字)\",\"children\":[]},{\"name\":\"@Type\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"警告类型\",\"children\":[]},{\"name\":\"@ShortText\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"警告描述信息(英文)\",\"children\":[]},{\"name\":\"@ShortTextZH\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"警告描述信息(中文)\",\"children\":[]}]}]},{\"name\":\"Errors\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"错误信息集合\",\"children\":[{\"name\":\"Error\",\"type\":\"array\",\"quantity\":\"0..n\",\"default\":\"\",\"description\":\"错误信息\",\"children\":[{\"name\":\"Trace\",\"type\":\"array\",\"quantity\":\"0..n\",\"default\":\"\",\"description\":\"错误详细描述或者内部异常信息\",\"children\":[{\"name\":\"@Code\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"编码\",\"children\":[]},{\"name\":\"@Text\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"文本\",\"children\":[]}]},{\"name\":\"@Code\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"错误代码(数字)\",\"children\":[]},{\"name\":\"@Type\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"错误类型\",\"children\":[]},{\"name\":\"@ShortText\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"错误描述信息(英文)\",\"children\":[]},{\"name\":\"@ShortTextZH\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"错误描述信息(中文)\",\"children\":[]}]}]}]}]",
+    "errorCodes": "[{\"code\":\" 403 \",\"name\":null,\"msg\":null,\"msgZh\":\" 用户名、密码、IP错误或无权限 \"},{\"code\":\" -303 \",\"name\":null,\"msg\":\" Inner service error! \",\"msgZh\":\" 内部服务错误 \"},{\"code\":\" -1 \",\"name\":null,\"msg\":\" Biz Error \",\"msgZh\":\" 业务异常 \"},{\"code\":\" -301 \",\"name\":null,\"msg\":\" office permission denied \",\"msgZh\":\" Office无权限 \"},{\"code\":\" -390 \",\"name\":null,\"msg\":\" IBE Service Error \",\"msgZh\":\" IBE服务异常 \"},{\"code\":\" -402 \",\"name\":null,\"msg\":\" input error \",\"msgZh\":\" 输入错误 \"},{\"code\":\" -700 \",\"name\":null,\"msg\":\" office code is not valid \",\"msgZh\":\" office号格式错误 \"},{\"code\":\" -9999 \",\"name\":null,\"msg\":\" unknown error \",\"msgZh\":\" 未知错误 \"},{\"code\":\" -10060 \",\"name\":null,\"msg\":\" pnr does not exist \",\"msgZh\":\" pnr不存在 \"},{\"code\":\" -50011 \",\"name\":null,\"msg\":\" status of printer is not normal \",\"msgZh\":\" 打票机状态错误 \"},{\"code\":\" -50020 \",\"name\":null,\"msg\":\" status of ticket is not valid \",\"msgZh\":\" 客票状态错误 \"},{\"code\":\" -54100 \",\"name\":null,\"msg\":\" Host error: permisson denied \",\"msgZh\":\" 票号不存在或无法提取 \"},{\"code\":\" -60042 \",\"name\":null,\"msg\":\" fail to finish the transaction \",\"msgZh\":\" 操作失败 \"}]",
+    "createTime": "2025-07-10T17:25:08.000+08:00",
+    "createUser": "jiangdequan",
+    "updateTime": "2025-11-25T15:35:09.000+08:00",
+    "updateUser": "ylzhu",
+    "qaApiDemos": [
+      {
+        "id": "22259331557752979",
+        "apiDocId": 17279178304913546,
+        "seqNumber": 1,
+        "demoDesc": "AirTicketVoid.xml",
+        "request": "？<OTA_AirTicketVoidRQ>\r\r\n\t<POS>\r\r\n\t\t<!-- PseudoCityCode = Office 号OtherID = 打票机号-->\r\r\n\t\t<Source PseudoCityCode=\"bjs187\" OtherID=\"60\"/>\r\r\n\t</POS>\r\r\n\t<!-- 票号,只有一个TicketVoidDetail 节点-->\r\r\n\t<TicketVoidDetail>\r\r\n\t\t<!-- pnr 号，必输-->\r\r\n\t\t<BookingReferenceID ID=\"HQRHX7\" ID_Context=\"PNR\"/>\r\r\n\t\t<!-- 票号，必输-->\r\r\n\t\t<TicketItemInfo TicketNumber=\"999-3944318760\"/>\r\r\n\t</TicketVoidDetail>\r\r\n</OTA_AirTicketVoidRQ>\r\r\n",
+        "response": null,
+        "createTime": "2025-09-03T16:42:32.000+08:00",
+        "createUser": "jiangdequan",
+        "updateTime": null,
+        "updateUser": null
+      },
+      {
+        "id": "22259331650028311",
+        "apiDocId": 17279178304913546,
+        "seqNumber": 2,
+        "demoDesc": "BOP废票+五类票.xml",
+        "request": "<OTA_AirTicketVoidRQ TicketType=\"BOP\">\r\n    <POS>\r\n        <!-- PseudoCityCode = Office 号OtherID = 打票机号-->\r\n        <Source PseudoCityCode=\"SHA384\" OtherID=\"9\"/>\r\n    </POS>\r\n    <!-- 票号,只有一个TicketVoidDetail 节点-->\r\n    <TicketVoidDetail>\r\n        <!-- pnr 号，必输-->\r\n        <BookingReferenceID ID=\"KEW0CM\" ID_Context=\"PNR\"/>\r\n        <!-- 票号，必输-->\r\n        <TicketItemInfo TicketNumber=\"988-4859960237\"/>\r\n    </TicketVoidDetail>\r\n</OTA_AirTicketVoidRQ>",
+        "response": null,
+        "createTime": "2025-09-03T16:42:32.000+08:00",
+        "createUser": "jiangdequan",
+        "updateTime": null,
+        "updateUser": null
+      },
+      {
+        "id": "22259331749643243",
+        "apiDocId": 17279178304913546,
+        "seqNumber": 3,
+        "demoDesc": "BOP废票.xml",
+        "request": "<OTA_AirTicketVoidRQ>\r\n<POS>\r\n<!-- PseudoCityCode = Office 号OtherID = 打票机号-->\r\n<Source PseudoCityCode=\"bjs187\" OtherID=\"60\" />\r\n</POS>\r\n<!-- 票号,只有一个TicketVoidDetail 节点-->\r\n<TicketVoidDetail>\r\n<!-- pnr 号，必输-->\r\n<BookingReferenceID ID=\"HQRHX7\" ID_Context=\"PNR\" />\r\n<!-- 票号，必输-->\r\n<TicketItemInfo TicketNumber=\"999-3944318760\" />\r\n\r\n<IsBOP>true</IsBOP>\r\n</TicketVoidDetail>\r\n</OTA_AirTicketVoidRQ>",
+        "response": null,
+        "createTime": "2025-09-03T16:42:33.000+08:00",
+        "createUser": "jiangdequan",
+        "updateTime": null,
+        "updateUser": null
+      },
+      {
+        "id": "22259331849257852",
+        "apiDocId": 17279178304913546,
+        "seqNumber": 4,
+        "demoDesc": "本票废票.xml",
+        "request": "<OTA_AirTicketVoidRQ TicketType=\"AL\">\r\n\t<POS>\r\n\t\t<Source PseudoCityCode=\"PEK160\" OtherID=\"1\"/>\r\n\t</POS>\r\n\t<!-- 票号,只有一个TicketVoidDetail 节点-->\r\n\t<TicketVoidDetail>\r\n\t\t<!-- pnr 号，必输-->\r\n\t\t<BookingReferenceID ID=\"HNWXL0\" ID_Context=\"PNR\"/>\r\n\t\t<!-- 票号，必输-->\r\n\t\t<TicketItemInfo TicketNumber=\"160-2311529391\" EndTicketNumber=\"160-2311529393\"/>\r\n\t</TicketVoidDetail>\r\n</OTA_AirTicketVoidRQ>",
+        "response": null,
+        "createTime": "2025-09-03T16:42:33.000+08:00",
+        "createUser": "jiangdequan",
+        "updateTime": null,
+        "updateUser": null
+      }
+    ],
+    "url": "/xml/AirTicketVoid"
+  }
+}

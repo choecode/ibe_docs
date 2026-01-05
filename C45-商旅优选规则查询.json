@@ -1,0 +1,35 @@
+{
+  "code": 200,
+  "msg": "处理成功！",
+  "data": {
+    "id": "17278709686862745",
+    "apiCode": "C45",
+    "apiNameEn": "BusinessTravelPolicy",
+    "apiNameCn": "商旅优选规则查询",
+    "introduce": "接收用户请求，根据条件进行商旅优选规则查询查询。",
+    "business": null,
+    "functions": "1、如果指定了productName参数，则根据商旅优选规则查询产品名称进行模糊查询；\n2、如果指定了airlinecode参数，则根据商旅优选规则查询产品适用航司进行模糊查询；\n3、如果指定了fareBasisList，则模糊查询该运价基础对应的产品；\n4、如果指定了CABINCODE，则查询该舱位对应的产品；可输入多个舱位代码\n5、如果指定了LISTLABEL，则模糊查询并展示该服务对应的产品；\n6、不传参则默认查询所有产品信息。",
+    "requestSchema": "[{\"name\":\"data\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"请求参数集合\",\"children\":[{\"name\":\"office\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"查询Office\",\"children\":[]},{\"name\":\"airlineCode\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"航司两字码：支持精确查询\",\"children\":[]},{\"name\":\"fareBasis\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"产品运价基础：支持模糊查询\",\"children\":[]},{\"name\":\"listLabel\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"服务名称\",\"children\":[]},{\"name\":\"cabinCode\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"舱位\",\"children\":[]}]}]",
+    "responseSchema": "[{\"name\":\"result\",\"type\":\"array\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"返回集合\",\"children\":[{\"name\":\"airlineCode\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"航司两字码\",\"children\":[]},{\"name\":\"byPassenger\",\"type\":\"boolean\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"是否按乘客拼入扩展指令\",\"children\":[]},{\"name\":\"cabinCode\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"舱位：多个舱位通过','分割\",\"children\":[]},{\"name\":\"cabinLabel\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"舱位标签\",\"children\":[]},{\"name\":\"detailsPage\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"详细描述\",\"children\":[]},{\"name\":\"endDate\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"航班有效期截至时间：格式：YYYYMMDD\",\"children\":[]},{\"name\":\"farebassis\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"产品运价基础列表：多个farebassis通过','分割\",\"children\":[]},{\"name\":\"id\",\"type\":\"int\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"编号\",\"children\":[]},{\"name\":\"listLabel\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"列表标签\",\"children\":[]},{\"name\":\"office\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"office号：多个office通过','分割\",\"children\":[]},{\"name\":\"productName\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"产品名称\",\"children\":[]},{\"name\":\"startDate\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"航班有效期起始时间：格式：YYYYMMDD\",\"children\":[]},{\"name\":\"legalRight\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"法律权利\",\"children\":[]},{\"name\":\"agentId\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"代理人ID标识\",\"children\":[]},{\"name\":\"expandCmd\",\"type\":\"boolean\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"扩展指令\",\"children\":[]},{\"name\":\"salesIncome\",\"type\":\"float\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"额外提供产品代理费\",\"children\":[]},{\"name\":\"salesIncomeInvisibleOffice\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"额外提供产品代理费不可见office\",\"children\":[]},{\"name\":\"isInternational\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"是否为国际\",\"children\":[]},{\"name\":\"departureAirport\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"始发地机场\",\"children\":[]},{\"name\":\"excludeDepartureAirport\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"排除始发地机场\",\"children\":[]}]}]",
+    "errorCodes": "[{\"code\":\" 403 \",\"name\":null,\"msg\":null,\"msgZh\":\" 用户名、密码、IP错误或无权限 \"},{\"code\":\" -301 \",\"name\":null,\"msg\":\" office prermission denied \",\"msgZh\":\" 没有office权限 \"},{\"code\":\" -400 \",\"name\":null,\"msg\":\" format of xml string is not valid \",\"msgZh\":\" xml内容格式错误 \"},{\"code\":\" -402 \",\"name\":null,\"msg\":\" input error \",\"msgZh\":\" 输入错误 \"},{\"code\":\" -500 \",\"name\":null,\"msg\":\" office code is empty \",\"msgZh\":\" office代码为空 \"},{\"code\":\" -700 \",\"name\":null,\"msg\":\" office code is not valid \",\"msgZh\":\" office号格式错误 \"},{\"code\":\" -83401 \",\"name\":null,\"msg\":\" error refund background \",\"msgZh\":\" 后台返回错误 \"}]",
+    "createTime": "2025-07-10T17:17:41.000+08:00",
+    "createUser": "jiangdequan",
+    "updateTime": "2025-11-17T16:58:41.000+08:00",
+    "updateUser": "ylzhu",
+    "qaApiDemos": [
+      {
+        "id": "22868091984675030",
+        "apiDocId": 17278709686862745,
+        "seqNumber": 1,
+        "demoDesc": "BusinessTravelPolicyRQ.xml",
+        "request": "{\n  \"data\": {\n    \"office\": \"SHA125\",\n    \"airlineCode\": \"ZH\",\n    \"fareBasis\": \"40J\"\n  }\n}",
+        "response": "{\n   \"result\": [\n      {\n         \"airlineCode\": \"ZH\",\n         \"byPassenger\": true,\n         \"cabinCode\": \"M,M1,U,Q,Q1,V,V1,W,S\",\n         \"cabinLabel\": \"免费退改1次\",\n         \"detailsPage\": \"航班起飞四小时前,免费退改一次。\",\n         \"endDate\": \"2099-01-01 00:00:00\",\n         \"farebassis\": \"M/140JGB,,M1/140JGB,U/140JGB,Q/140JGB,Q1/140JGB,V/140JGB,V1/140JGB\",\n         \"id\": 5,\n         \"listLabel\": \"免费退改\",\n         \"office\": \"HGH888,SHA125,PEK777,CTU185,SHA697,SHA317,SZX602,PEK289,CZX148,SHA666,SHA255,PEK326,SIA209,SHA396,SHA747,CAN623,SZX347,SHA511,NKG166,SHA267,PEK898,NKG214,SHA696,CAN925,SZX274,SZX955,NKG192,SHA178,SZX241,SHA171,BJS177，CAN826、SHA771、PEK427\",\n         \"productName\": \"商务如意行\",\n         \"startDate\": \"2021-03-09 00:00:00\"\n      },\n      {\n         \"airlineCode\": \"ZH\",\n         \"byPassenger\": true,\n         \"cabinCode\": \"M,M1,U,Q,Q1,V,V1,W,S\",\n         \"cabinLabel\": \"免费变更1次\",\n         \"detailsPage\": \"航班起飞四小时前同舱免费变更一次。\",\n         \"endDate\": \"2099-01-01 00:00:00\",\n         \"farebassis\": \"W/140JGB,S/140JGB\",\n         \"id\": 7,\n         \"isInternational\": \"2021-03-09 00:00:00\",\n         \"listLabel\": \"免费变更\",\n         \"office\": \"HGH888,SHA125,PEK777,CTU185,SHA697,SHA317,SZX602,PEK289,CZX148,SHA666,SHA255,PEK326,SIA209,SHA396,SHA747,CAN623,SZX347,SHA511,NKG166,SHA267,PEK898,NKG214,SHA696,CAN925,SZX274,SZX955,NKG192,SHA178,SZX241,SHA171,BJS177，CAN826、SHA771、PEK427\",\n         \"productName\": \"商务如意行\",\n         \"startDate\": 1\n      }\n   ],\n   \"success\": true\n}",
+        "createTime": "2025-09-10T09:58:32.060+08:00",
+        "createUser": "jiangdequan",
+        "updateTime": null,
+        "updateUser": null
+      }
+    ],
+    "url": "/xml/BusinessTravelPolicy"
+  }
+}

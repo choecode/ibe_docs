@@ -1,0 +1,35 @@
+{
+  "code": 200,
+  "msg": "处理成功！",
+  "data": {
+    "id": "17278753534116837",
+    "apiCode": "D9",
+    "apiNameEn": "AirSegCancelSelect",
+    "apiNameCn": "PNR航段取消选择",
+    "introduce": "根据PNR选择航段和取消选择航段，对应主机SEL指令。",
+    "business": "选择PNR的某航段、取消选择PNR的某航段，对应主机SEL指令。",
+    "functions": "1. 支持范围：国内PNR、国际PNR\r\n  2. 支持操作：\r\n    取消选择航段：会取消相应航段后面的标识",
+    "requestSchema": "[{\"name\":\"TES_AirSegSelRQ\",\"type\":\"object\",\"quantity\":\"\",\"description\":\"\",\"children\":[{\"name\":\"Type\",\"type\":\"string\",\"quantity\":\"\",\"description\":\"\",\"children\":[],\"default\":\"CANCEL\"},{\"name\":\"POS\",\"type\":\"object\",\"quantity\":\"\",\"description\":\"零售商信息\",\"children\":[{\"name\":\"Source\",\"type\":\"object\",\"quantity\":\"\",\"description\":\"\",\"children\":[{\"name\":\"PseudoCityCode\",\"type\":\"string\",\"quantity\":\"\",\"description\":\"\",\"children\":[],\"default\":\"BJS187\"}],\"default\":\"\"}],\"default\":\"\"},{\"name\":\"BookingReferenceID\",\"type\":\"object\",\"quantity\":\"\",\"description\":\"PNR信息\",\"children\":[{\"name\":\"ID\",\"type\":\"string\",\"quantity\":\"\",\"description\":\"\",\"children\":[],\"default\":\"HQRHX7\"},{\"name\":\"ID_Context\",\"type\":\"string\",\"quantity\":\"\",\"description\":\"\",\"children\":[],\"default\":\"PNR\"}],\"default\":\"\"},{\"name\":\"SegmentSelectDetail\",\"type\":\"object\",\"quantity\":\"\",\"description\":\"\",\"children\":[{\"name\":\"SegmentRPH\",\"type\":\"string\",\"quantity\":\"\",\"description\":\"\",\"children\":[],\"default\":\"3\"}],\"default\":\"\"},{\"name\":\"SegmentSelectDetail\",\"type\":\"object\",\"quantity\":\"\",\"description\":\"\",\"children\":[{\"name\":\"SegmentRPH\",\"type\":\"string\",\"quantity\":\"\",\"description\":\"\",\"children\":[],\"default\":\"3\"}],\"default\":\"\"}],\"default\":\"\"}]",
+    "responseSchema": "[{\"name\":\"TES_AirSegSelRS\",\"type\":\"object\",\"quantity\":\"\",\"description\":\"\",\"children\":[{\"name\":\"Success\",\"type\":\"object\",\"quantity\":\"\",\"description\":\"成功信息\",\"children\":[],\"default\":\"\"}],\"default\":\"\"}]",
+    "errorCodes": "[{\"code\":\" 403 \",\"name\":null,\"msg\":null,\"msgZh\":\" 用户名、密码、IP错误或无权限 \"},{\"code\":\" -303 \",\"name\":null,\"msg\":\" inner service error \",\"msgZh\":\" 内部服务异常 \"},{\"code\":\" -9999 \",\"name\":null,\"msg\":\" unknown error!  \",\"msgZh\":\" 未知错误 \"},{\"code\":\" -305 \",\"name\":null,\"msg\":\" transaction times limited \",\"msgZh\":\" 访问次数限制 \"},{\"code\":\" -304 \",\"name\":null,\"msg\":\" sending commands too fast, try again later \",\"msgZh\":\" 访问速度过快,请稍后再试 \"},{\"code\":\" -1 \",\"name\":null,\"msg\":\" Biz Error \",\"msgZh\":\" 业务异常 \"},{\"code\":\" -303 \",\"name\":null,\"msg\":\" Inner service Error \",\"msgZh\":\" 内部异常 \"},{\"code\":\" -402 \",\"name\":null,\"msg\":\" Input Error \",\"msgZh\":\" 输入参数有误 \"},{\"code\":\" -390 \",\"name\":null,\"msg\":\" IBE Service Error \",\"msgZh\":\" IBE服务异常 \"},{\"code\":\" -301 \",\"name\":null,\"msg\":null,\"msgZh\":\" office permission denied \"},{\"code\":\" -10060 \",\"name\":null,\"msg\":\" Pnr does not exist \",\"msgZh\":\" PNR不存在 \"}]",
+    "createTime": "2025-07-10T17:18:23.527+08:00",
+    "createUser": "jiangdequan",
+    "updateTime": "2025-09-09T14:57:47.712+08:00",
+    "updateUser": null,
+    "qaApiDemos": [
+      {
+        "id": "22796323093742336",
+        "apiDocId": 17278753534116837,
+        "seqNumber": 1,
+        "demoDesc": "SegCancelSelRQ.xml",
+        "request": "<TES_AirSegSelRQ Type=\"CANCEL\">\r\n\t<POS>\r\n\t\t<Source PseudoCityCode=\"BJS187\" />\r\n\t</POS>\r\n\t<BookingReferenceID ID=\"HQRHX7\" ID_Context=\"PNR\" />\r\n\t<SegmentSelectDetail SegmentRPH=\"2\" />\r\n\t<SegmentSelectDetail SegmentRPH=\"3\" />\t\t\r\n</TES_AirSegSelRQ>\r\n",
+        "response": "<TES_AirSegSelRS>\r\n\t<Success>OK</Success>\r\n</TES_AirSegSelRS>",
+        "createTime": "2025-09-09T14:57:47.893+08:00",
+        "createUser": "jiangdequan",
+        "updateTime": null,
+        "updateUser": null
+      }
+    ],
+    "url": "/xml/AirSegCancelSelect"
+  }
+}

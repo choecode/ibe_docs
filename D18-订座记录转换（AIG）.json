@@ -1,0 +1,47 @@
+{
+  "code": 200,
+  "msg": "处理成功！",
+  "data": {
+    "id": "17278740733100384",
+    "apiCode": "D18",
+    "apiNameEn": "AirReclaimPNR",
+    "apiNameCn": "订座记录转换（AIG）",
+    "introduce": "订座记录转换接口实现了黑屏RRT指令功能，使用该接口可将航空公司系统记录转换为代理人系统记录（国内/国外）。",
+    "business": "支持代理人在CRS系统将航空公司系统的订座记录转换为CRS系统记录。",
+    "functions": "1、支持国内/国外航司",
+    "requestSchema": "[{\"name\":\"TES_AirReclaimPNRRQ\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"订座记录转换(AIG)请求\",\"children\":[{\"name\":\"POS\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"Point Of Sale\",\"children\":[{\"name\":\"Source\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"请求者信息\",\"children\":[{\"name\":\"@PseudoCityCode\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"伪城市代码（Office代码：PKE099）\",\"children\":[]}]}]},{\"name\":\"ReclaimPNRInfo\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"\",\"children\":[{\"name\":\"Option\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"国内或国外航司，V：国内航司；D：国外航司；\",\"children\":[]},{\"name\":\"ICSPNR\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"icsPNR号。航空公司纪录编号。\",\"children\":[]},{\"name\":\"FullFlightNumber\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"航班号，如：CA1832\",\"children\":[]},{\"name\":\"FlightDate\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"航班日期，国内航司必填，国外航司非必填。格式：yyyyMMdd，如：20220406\",\"children\":[]}]}]}]",
+    "responseSchema": "[{\"name\":\"TES_AirReclaimPNRRS\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"订座记录转换(AIG)响应\",\"children\":[{\"name\":\"Warnings\",\"type\":\"array\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"警告信息集合\",\"children\":[{\"name\":\"Warning\",\"type\":\"array\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"警告信息\",\"children\":[{\"name\":\"Trace\",\"type\":\"array\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"错误详细描述或者内部异常信息\",\"children\":[{\"name\":\"@Code\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"编码\",\"children\":[]},{\"name\":\"@Text\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"文本\",\"children\":[]}]},{\"name\":\"@Code\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"警告代码(数字)\",\"children\":[]},{\"name\":\"@Type\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"警告类型\",\"children\":[]},{\"name\":\"@ShortText\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"警告描述信息(英文)\",\"children\":[]},{\"name\":\"@ShortTextZH\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"警告描述信息(中文)\",\"children\":[]}]}]},{\"name\":\"Errors\",\"type\":\"array\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"错误信息集合\",\"children\":[{\"name\":\"Error\",\"type\":\"array\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"错误信息\",\"children\":[{\"name\":\"Trace\",\"type\":\"array\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"错误详细描述或者内部异常信息\",\"children\":[{\"name\":\"@Code\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"编码\",\"children\":[]},{\"name\":\"@Text\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"文本\",\"children\":[]}]},{\"name\":\"@Code\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"错误代码（数字）\",\"children\":[]},{\"name\":\"@Type\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"错误类型\",\"children\":[]},{\"name\":\"@ShortText\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"错误描述信息（英文）\",\"children\":[]},{\"name\":\"@ShortTextZH\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"错误描述信息（中文）\",\"children\":[]}]}]},{\"name\":\"PNR\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"CrsPNR号\",\"children\":[]}]}]",
+    "errorCodes": "[{\"code\":\" 403 \",\"name\":null,\"msg\":null,\"msgZh\":\" 用户名、密码、IP错误或无权限 \"},{\"code\":\" -301 \",\"name\":null,\"msg\":\" office permission denied \",\"msgZh\":\" Office 没有权限 \"},{\"code\":\" -303 \",\"name\":null,\"msg\":\" inner service error \",\"msgZh\":\" 内部服务异常 \"},{\"code\":\" -304 \",\"name\":null,\"msg\":\" sending commands too fast, try again later \",\"msgZh\":\" 访问速度过快,请稍后再试 \"},{\"code\":\" -305 \",\"name\":null,\"msg\":\" transaction times limited \",\"msgZh\":\" 访问次数限制 \"},{\"code\":\" -306 \",\"name\":null,\"msg\":\" too many concurrent request for service \",\"msgZh\":\" 访问频率限制 \"},{\"code\":\" -311 \",\"name\":null,\"msg\":\" time out, please try again later \",\"msgZh\":\" 操作超时，请稍后再试 \"},{\"code\":\" -390 \",\"name\":null,\"msg\":\" IBE Service Error \",\"msgZh\":\" IBE服务异常 \"},{\"code\":\" -1 \",\"name\":null,\"msg\":\" Biz Error \",\"msgZh\":\" 业务异常 \"},{\"code\":\" -400 \",\"name\":null,\"msg\":\" format of xml string is not valid \",\"msgZh\":\" xml内容格式错误 \"},{\"code\":\" -402 \",\"name\":null,\"msg\":\" Input error! \",\"msgZh\":\" 输入参数出错 \"},{\"code\":\" -84121 \",\"name\":null,\"msg\":\" PNR MATCH NOT FOUND \",\"msgZh\":\" 未查询到该PNR \"},{\"code\":\" -84122 \",\"name\":null,\"msg\":\" PNR SECURED \",\"msgZh\":\" 无权查看该PNR \"},{\"code\":\" -84123 \",\"name\":null,\"msg\":\" PNR ALREADY ON THIS SYSTEM \",\"msgZh\":\" 该PNR已存在 \"},{\"code\":\" -84124 \",\"name\":null,\"msg\":\" RETRIEVAL OF THIS PNR NOT ALLOWED \",\"msgZh\":\" 不允许检索该PNR \"}]",
+    "createTime": "2025-07-10T17:18:11.000+08:00",
+    "createUser": "jiangdequan",
+    "updateTime": "2025-09-18T10:02:19.000+08:00",
+    "updateUser": "xyi",
+    "qaApiDemos": [
+      {
+        "id": "22338651802305239",
+        "apiDocId": 17278740733100384,
+        "seqNumber": 1,
+        "demoDesc": "国内航司_V.xml",
+        "request": "<TES_AirReclaimPNRRQ>\r\n    <POS>\r\n        <Source PseudoCityCode=\"BJS191\" />\r\n    </POS>\r\n    <ReclaimPNRInfo>\r\n        <Option>V</Option>\r\n        <ICSPNR>MTC44B</ICSPNR>\r\n        <FullFlightNumber>CA1327</FullFlightNumber>\r\n        <FlightDate>20220413</FlightDate>\r\n    </ReclaimPNRInfo>\r\n</TES_AirReclaimPNRRQ>",
+        "response": "<TES_AirReclaimPNRRS>\n\t<PNR>PBVRTT</PNR>\n</TES_AirReclaimPNRRS>",
+        "createTime": "2025-09-04T13:43:18.000+08:00",
+        "createUser": "jiangdequan",
+        "updateTime": "2025-09-18T10:03:09.000+08:00",
+        "updateUser": "xyi"
+      },
+      {
+        "id": "22338651922890924",
+        "apiDocId": 17278740733100384,
+        "seqNumber": 2,
+        "demoDesc": "国外航司_D.xml",
+        "request": "<TES_AirReclaimPNRRQ>\r\n    <POS>\r\n        <Source PseudoCityCode=\"BJS191\" />\r\n    </POS>\r\n    <ReclaimPNRInfo>\r\n        <Option>D</Option>\r\n        <ICSPNR>5GB5LI</ICSPNR>\r\n        <FullFlightNumber>CX289</FullFlightNumber>\r\n    </ReclaimPNRInfo>\r\n</TES_AirReclaimPNRRQ>",
+        "response": "<TES_AirReclaimPNRRS>\n\t<PNR>5GB5LI</PNR>\n</TES_AirReclaimPNRRS>",
+        "createTime": "2025-09-04T13:43:18.000+08:00",
+        "createUser": "jiangdequan",
+        "updateTime": "2025-09-18T10:03:22.000+08:00",
+        "updateUser": "xyi"
+      }
+    ],
+    "url": "/xml/AirReclaimPNR"
+  }
+}

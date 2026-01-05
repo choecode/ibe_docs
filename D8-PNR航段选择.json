@@ -1,0 +1,35 @@
+{
+  "code": 200,
+  "msg": "处理成功！",
+  "data": {
+    "id": "22796300609126627",
+    "apiCode": "D8",
+    "apiNameEn": "AirSegSelect",
+    "apiNameCn": "PNR航段选择",
+    "introduce": "根据PNR选择航段，对应主机SEL指令。",
+    "business": "选择PNR的某航段，对应主机SEL指令。",
+    "functions": "1. 支持范围：国内PNR、国际PNR\n2. 支持操作：\n   选择航段：会在航段后面加上TKT、QTE或者T_Q标识\n3. 影响范围：运价计算、运价存储、出票\n   TKT：会在航段后加入“TKT”标识，用于输入运价和出票（国际）；计算运价、输入运价和出票（国内）；\n   QTE：会在航段后加入“QTE”标识，用于计算国际运价（但是对国际运价的输入、国际航段出票、以及国内运价计算、输入、出票都没有影响）；\n   T_Q：是TKT和QTE的结合，会在航段后加入“T&Q”标识，用于计算国际运价、国际运价输入、国际航段出票；",
+    "requestSchema": "[{\"name\":\"TES_AirSegSelRQ\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"\",\"children\":[{\"name\":\"@Type\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"一种取值：SELECT，表示选择航段\",\"children\":[]},{\"name\":\"POS\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"\",\"children\":[{\"name\":\"Source\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"\",\"children\":[{\"name\":\"PseudoCityCode\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"Office号\",\"children\":[]}]}]},{\"name\":\"BookingReferenceID\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"\",\"children\":[{\"name\":\"ID\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"PNR号\",\"children\":[]},{\"name\":\"ID_Context\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"类型。PNR\",\"children\":[]}]},{\"name\":\"SegmentSelectDetail\",\"type\":\"object\",\"quantity\":\"1..16\",\"default\":\"\",\"description\":\"\",\"children\":[{\"name\":\"Option\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"操作。Type为select时必填，只能填如下值：TKT:影响国内运价计算、运价输入和出票；QTE:影响国际运价计算；T_Q:影响国际运价计算、运价输入和出票\",\"children\":[]},{\"name\":\"SegmentRPH\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"PNR行序号\",\"children\":[]}]}]}]",
+    "responseSchema": "[{\"name\":\"TES_AirSegSelRS\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"\",\"children\":[{\"name\":\"Success\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"\",\"children\":[]},{\"name\":\"Errors\",\"type\":\"array\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"错误信息集合\",\"children\":[{\"name\":\"Error\",\"type\":\"array\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"错误信息\",\"children\":[{\"name\":\"@Code\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"错误代码（数字）\",\"children\":[]},{\"name\":\"@Type\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"错误类型\",\"children\":[]},{\"name\":\"@ShortText\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"错误描述信息（英文）\",\"children\":[]}]}]},{\"name\":\"Warnings\",\"type\":\"array\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"警告信息集合\",\"children\":[{\"name\":\"Warning\",\"type\":\"array\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"警告信息\",\"children\":[{\"name\":\"@Code\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"警告代码（数字）\",\"children\":[]},{\"name\":\"@Type\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"警告类型\",\"children\":[]},{\"name\":\"@ShortText\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"警告描述信息（英文）\",\"children\":[]}]}]}]}]",
+    "errorCodes": "[{\"code\":403,\"name\":\"\",\"msg\":\"\",\"msgZh\":\" 用户名、密码、IP错误或无权限 \"},{\"code\":-303,\"name\":\"\",\"msg\":\" inner service error \",\"msgZh\":\" 内部服务异常 \"},{\"code\":-304,\"name\":\"\",\"msg\":\" sending commands too fast, try again later \",\"msgZh\":\" 访问速度过快,请稍后再试 \"},{\"code\":-305,\"name\":\"\",\"msg\":\" transaction times limited \",\"msgZh\":\" 访问次数限制 \"},{\"code\":-301,\"name\":\"\",\"msg\":\" office permission denied \",\"msgZh\":\" Office 没有权限 \"},{\"code\":-390,\"name\":\"\",\"msg\":\" IBE Service Error \",\"msgZh\":\" IBE服务异常 \"},{\"code\":-9999,\"name\":\"\",\"msg\":\"unknown error! \",\"msgZh\":\"未知错误\"},{\"code\":-306,\"name\":\"\",\"msg\":\" too many concurrent request for service \",\"msgZh\":\" 访问频率限制 \"},{\"code\":-1,\"name\":\"\",\"msg\":\" Biz Error \",\"msgZh\":\" 业务异常 \"},{\"code\":-10060,\"name\":\"\",\"msg\":\"Pnr does not exist\",\"msgZh\":\"PNR不存在\"},{\"code\":-402,\"name\":\"\",\"msg\":\" Input error! \",\"msgZh\":\" 输入参数出错 \"}]",
+    "createTime": "2025-09-09T14:57:26.000+08:00",
+    "createUser": "jiangdequan",
+    "updateTime": "2025-09-19T15:52:29.000+08:00",
+    "updateUser": "xyi",
+    "qaApiDemos": [
+      {
+        "id": "23705641457549478",
+        "apiDocId": 22796300609126627,
+        "seqNumber": 1,
+        "demoDesc": "选择航段",
+        "request": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<TES_AirSegSelRQ Type=\"SELECT\">\n\t<POS>\n\t\t<Source PseudoCityCode=\"BJS187\" />\n\t</POS>\n\t<BookingReferenceID ID=\"HQRHX7\" ID_Context=\"PNR\" />\n\t<SegmentSelectDetail SegmentRPH=\"2\" Option=\"TKT\" />\n\t<SegmentSelectDetail SegmentRPH=\"3\" Option=\"TKT\" />\t\t\n</TES_AirSegSelRQ>",
+        "response": "<TES_AirSegSelRS>\n\t<Success>OK</Success>\n</TES_AirSegSelRS>",
+        "createTime": "2025-09-19T15:51:01.000+08:00",
+        "createUser": "xyi",
+        "updateTime": null,
+        "updateUser": null
+      }
+    ],
+    "url": "/xml/AirSegSelect"
+  }
+}
