@@ -1,0 +1,47 @@
+{
+  "code": 200,
+  "msg": "处理成功！",
+  "data": {
+    "id": "17279490084307527",
+    "apiCode": "X30",
+    "apiNameEn": "ElectronicItineraryRepushRPT",
+    "apiNameCn": "电子行程单重推接口",
+    "introduce": "用户调用接口实现电子行程单的重推。重推预览完成返回 发送邮箱是否成功标志、发送手机是否成功标 志。请求行程单信息、票号、电子邮箱地址、电话号码 及 电子发票 Base64 pngFile 版式文件。。",
+    "business": "电子行程单重推预览",
+    "functions": "电子行程单重推预览",
+    "requestSchema": "[{\"name\":\"office\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"office\",\"children\":[]},{\"name\":\"itineraryNumber\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"行程单号（需由电子 行程单开具接口的返 回 报文 中 itineraryNumber 字段 获取)\",\"children\":[]},{\"name\":\"ticketNumber\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"票号\",\"children\":[]},{\"name\":\"emailAddress\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"电子邮箱地址（支持 多邮箱发送，分隔符 为采用半角英文分号 “;”分割,字符串长度 最大支持 200，示例 可见测试样例）\",\"children\":[]},{\"name\":\"telephoneNumber\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"电话号码\",\"children\":[]}]",
+    "responseSchema": "[{\"name\":\"code\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"\",\"children\":[]},{\"name\":\"erptSendResInfo\",\"type\":\"object\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"\",\"children\":[{\"name\":\"emailInd\",\"type\":\"boolean\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"发送邮箱是否成功标志\",\"children\":[]},{\"name\":\"mobileInd\",\"type\":\"boolean\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"发送电话是否成功标志\",\"children\":[]}]},{\"name\":\"message\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"\",\"children\":[]}]",
+    "errorCodes": "[{\"code\":403,\"name\":\"\",\"msg\":\"\",\"msgZh\":\" 用户名、密码、IP错误或无权限 \"},{\"code\":-390,\"name\":\"\",\"msg\":\"IBESERVICE_ERROR\",\"msgZh\":\"IBE服务异常\"},{\"code\":-402,\"name\":\"\",\"msg\":\"INPUT_ERROR\",\"msgZh\":\"INPUT_ERROR\"}]",
+    "createTime": "2025-07-10T17:30:05.000+08:00",
+    "createUser": "jiangdequan",
+    "updateTime": "2025-11-25T15:48:57.000+08:00",
+    "updateUser": "ylzhu",
+    "qaApiDemos": [
+      {
+        "id": "22983872876643085",
+        "apiDocId": 17279490084307527,
+        "seqNumber": 1,
+        "demoDesc": "电子行程单重推RQ.json",
+        "request": "{\r\n    \"office\": \"TYN202\",\r\n    \"itineraryNumber\": \"24508781210000001122\",\r\n    \"ticketNumber\": \"7812308536163\",\r\n    \"emailAddress\": \"ylzhu@travelsky.com.cn\",\r\n    \"telephoneNumber\": \"18225324276\"\r\n}",
+        "response": "{\n    \"code\": \"1\",\n    \"message\": \"成功|SUCCESS\",\n    \"erptSendResInfo\": {\n        \"emailInd\": true,\n        \"mobileInd\": true\n    }\n}",
+        "createTime": "2025-09-11T16:38:49.000+08:00",
+        "createUser": "jiangdequan",
+        "updateTime": "2025-09-18T15:01:19.000+08:00",
+        "updateUser": "ylzhu"
+      },
+      {
+        "id": "22983872962626430",
+        "apiDocId": 17279490084307527,
+        "seqNumber": 2,
+        "demoDesc": "电子行程单重推RS.json",
+        "request": "{\r\n    \"code\": \"1\",\r\n    \"erptSendResInfo\": {\r\n       \"emailInd\": true,\r\n       \"mobileInd\": true\r\n    },\r\n    \"message\": \"成功|SUCCESS\"\r\n }",
+        "response": null,
+        "createTime": "2025-09-11T16:38:49.000+08:00",
+        "createUser": "jiangdequan",
+        "updateTime": null,
+        "updateUser": null
+      }
+    ],
+    "url": "/xml/ElectronicItineraryRepushRPT"
+  }
+}

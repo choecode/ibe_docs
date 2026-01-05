@@ -1,0 +1,47 @@
+{
+  "code": 200,
+  "msg": "处理成功！",
+  "data": {
+    "id": "17279488435946305",
+    "apiCode": "X25",
+    "apiNameEn": "ElectronicItineraryPrintRPT",
+    "apiNameCn": "电子行程单开具或冲红接口RPT",
+    "introduce": "用户调用接口实现电子行程单的开具及红冲。开具完成返回开具状态和版式文件。",
+    "business": "电子行程单的开具及红冲",
+    "functions": "电子行程单的开具及红冲",
+    "requestSchema": "[{\"name\":\"seller\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"销售方信息，目前销售方信息不用传输。因业务需要，电子行程单系统暂时性维护销方信息。传入无效。\",\"children\":[{\"name\":\"taxpayerId\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"购买方纳税人识别号\",\"children\":[]},{\"name\":\"name\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"购买方名称\",\"children\":[]},{\"name\":\"address\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"购买方地址\",\"children\":[]},{\"name\":\"telephoneNumber\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"购买方电话号码\",\"children\":[]},{\"name\":\"bankName\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"购买方银行名称\",\"children\":[]},{\"name\":\"bankAccount\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"购买方银行账号\",\"children\":[]}]},{\"name\":\"buyer\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"购买方信息\",\"children\":[{\"name\":\"taxpayerId\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"\",\"children\":[]},{\"name\":\"name\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"\",\"children\":[]},{\"name\":\"type\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"购买方类型 0：企业 1：机关或事业单位 2：个人 3：其他\",\"children\":[]},{\"name\":\"address\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"\",\"children\":[]},{\"name\":\"telephoneNumber\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"\",\"children\":[]},{\"name\":\"bankName\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"\",\"children\":[]},{\"name\":\"bankAccount\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"\",\"children\":[]}]},{\"name\":\"deliveryInformation\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"交付信息\",\"children\":[{\"name\":\"email\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"交付邮箱，如果指定了邮箱。系统会在开票成功后尝试发送行程单版式文件至此邮箱。（支持多邮箱发送，分隔符为采用半角英文分号“;”分割,字符串长度最大支持200）\",\"children\":[]},{\"name\":\"mobilePhoneNumber\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"交付手机号，暂时没有效果\",\"children\":[]}]},{\"name\":\"rushRedInformation\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"红冲信息，如果开具类型为红票，则必须传入\",\"children\":[{\"name\":\"originalItineraryTicketNumber\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"原始行程单号码。\",\"children\":[]},{\"name\":\"reason\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"红字发票冲红原因代 码：01:开票有 误\",\"children\":[]}]},{\"name\":\"issueType\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"开票类型 0：蓝票 1：红票：0\",\"children\":[]},{\"name\":\"method\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"开票方式：0：合并开具 1：拆分开具 如不传入默认为 0\",\"children\":[]},{\"name\":\"office\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"开票OFFICE ，段需要与系统登录用户OFFICE保持一 致。：BJS000\",\"children\":[]},{\"name\":\"ticketNumber\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"机票号码：9102213973277\",\"children\":[]},{\"name\":\"remark\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"行程单备注\",\"children\":[]},{\"name\":\"orderNumber\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"企业订单号\",\"children\":[]},{\"name\":\"extraAmount\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"加减价\",\"children\":[]},{\"name\":\"layoutFileType\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"版式文件类型 0：电子行程单 1：电子凭证 如不传入默认为 0\",\"children\":[]},{\"name\":\"customFields\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"\",\"children\":[]},{\"name\":\"issueChannel\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"开具渠道 1.由业务前端可自行定义使用 2.外部用户直接对接ibe，由ibe填入用户ibe帐号\",\"children\":[]},{\"name\":\"tradeSerialnumber\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"交易流水号\",\"children\":[]}]",
+    "responseSchema": "[{\"name\":\"code\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"\",\"children\":[]},{\"name\":\"data\",\"type\":\"object\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"\",\"children\":[{\"name\":\"itineraryTicketNumber\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"行程单号：itineraryTicketNumber\",\"children\":[]},{\"name\":\"requestID\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"订单请求批次号，后续根据此批次号查询\\n开具请求或者行程单信息\",\"children\":[]}]},{\"name\":\"message\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"\",\"children\":[]}]",
+    "errorCodes": "[{\"code\":\" -390 \",\"name\":null,\"msg\":\" IBESERVICE_ERROR \",\"msgZh\":\" IBE服务异常 \"},{\"code\":\" -402 \",\"name\":null,\"msg\":\" INPUT_ERROR \",\"msgZh\":\" 输入错误 \"},{\"code\":\" 403 \",\"name\":null,\"msg\":null,\"msgZh\":\" 用户名、密码、IP错误或无权限 \"}]",
+    "createTime": "2025-07-10T17:30:04.000+08:00",
+    "createUser": "jiangdequan",
+    "updateTime": "2025-11-06T13:23:02.000+08:00",
+    "updateUser": "zjhe",
+    "qaApiDemos": [
+      {
+        "id": "22981961385509545",
+        "apiDocId": 17279488435946305,
+        "seqNumber": 1,
+        "demoDesc": "电子行程单开具RQ.json",
+        "request": "{\r\n\"seller\": {\r\n    \"taxpayerId\": \"22222222222222222222\",\r\n    \"name\": \"中国邮政集团有限公司\",\r\n    \"address\": \"购方地址\",\r\n    \"telephoneNumber\": \"18883846677\",\r\n    \"bankName\": \"购方银行\",\r\n    \"bankAccount\": \"购方银行账号\"\r\n  },\r\n    \"buyer\":{\r\n        \"taxpayerId\":\"22222222222222222222\",\r\n        \"name\":\"中国邮政集团有限公司\",\r\n        \"type\":\"0\",\r\n        \"address\":\"购方地址\",\r\n        \"telephoneNumber\":\"18883846677\",\r\n        \"bankName\":\"购方银行\",\r\n        \"bankAccount\":\"购方银行账号\"\r\n    },\r\n    \"deliveryInformation\":{\r\n        \"email\":\"zmfu@travelsky.com.cn\",\r\n        \"mobilePhoneNumber\":\"12222\"\r\n    },\r\n    \"rushRedInformation\":{\r\n        \"originalItineraryTicketNumber\":\"23118999210000000695\",\r\n        \"reason\":\"01\"\r\n    },\r\n    \"issueType\":\"0\",\r\n    \"method\":\"0\",\r\n    \"office\":\"BJS187\",\r\n    \"ticketNumber\":\"7840000000809\",\r\n    \"remark\":\"这是姓名为付付\",\r\n    \"orderNumber\":\"12222\",\r\n    \"extraAmount\":\"付付丫\",\r\n    \"layoutFileType\":\"0\",\r\n    \"customFields\":\"备用字段\",\r\n    \"issueChannel\":\"1\",\r\n    \"tradeSerialnumber\":\"13609401439\"\r\n}\r\n",
+        "response": null,
+        "createTime": "2025-09-11T16:08:26.000+08:00",
+        "createUser": "jiangdequan",
+        "updateTime": null,
+        "updateUser": null
+      },
+      {
+        "id": "22981961473589415",
+        "apiDocId": 17279488435946305,
+        "seqNumber": 2,
+        "demoDesc": "电子行程单开具RS.json",
+        "request": "{\r\n    \"code\": \"1\",\r\n    \"data\": {\r\n       \"itineraryTicketNumber\": \"EIP8589020211220153558\",\r\n       \"requestID\": \"81146585869242339720211220153558\"\r\n    },\r\n    \"message\": \"SUCCESS\"\r\n }",
+        "response": null,
+        "createTime": "2025-09-11T16:08:26.000+08:00",
+        "createUser": "jiangdequan",
+        "updateTime": null,
+        "updateUser": null
+      }
+    ],
+    "url": "/xml/ElectronicItineraryPrintRPT"
+  }
+}

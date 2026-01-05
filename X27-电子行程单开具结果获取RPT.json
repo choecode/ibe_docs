@@ -1,0 +1,35 @@
+{
+  "code": 200,
+  "msg": "处理成功！",
+  "data": {
+    "id": "17279489252786709",
+    "apiCode": "X27",
+    "apiNameEn": "GetItineraryIssueResultRPT",
+    "apiNameCn": "电子行程单开具结果获取RPT",
+    "introduce": "用于获取电子行程单开具请求的处理结果。",
+    "business": "用于获取电子行程单开具请求的处理结果。",
+    "functions": "用于获取电子行程单开具请求的处理结果。\r\n查询参数中的开具请求批次号、机票号、开票Office号等应该与开具时的信息一致。",
+    "requestSchema": "[{\"name\":\"requestId\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"开具请求批次号\",\"children\":[]},{\"name\":\"ticketNumber\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"机票号\",\"children\":[]},{\"name\":\"office\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"开票OFFICE：与系统登录用户OFFICE保持一致\",\"children\":[]},{\"name\":\"fileType\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"\",\"children\":[]}]",
+    "responseSchema": "[{\"name\":\"code\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"状态码\",\"children\":[]},{\"name\":\"data\",\"type\":\"object\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"开具结果数据\",\"children\":[{\"name\":\"issueTime\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"行程单开具时间：格式：yyyy-MM-dd HH:mm:ss\",\"children\":[]},{\"name\":\"itineraryNumber\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"行程单号\",\"children\":[]},{\"name\":\"ofdFile\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"ofd文件流：Base64编码串\",\"children\":[]},{\"name\":\"office\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"开票OFFICE\",\"children\":[]},{\"name\":\"pngFile\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"png文件流：Base64编码串\",\"children\":[]},{\"name\":\"requestId\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"开具请求批次号\",\"children\":[]},{\"name\":\"ticketNumber\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"机票号\",\"children\":[]}]},{\"name\":\"message\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"返回状态信息：成功或异常提示信息\",\"children\":[]}]",
+    "errorCodes": "[{\"code\":\" -390 \",\"name\":null,\"msg\":\" IBESERVICE_ERROR \",\"msgZh\":\" IBE服务异常 \"},{\"code\":\" -402 \",\"name\":null,\"msg\":\" INPUT_ERROR \",\"msgZh\":\" 输入错误 \"},{\"code\":\" 403 \",\"name\":null,\"msg\":null,\"msgZh\":\" 用户名、密码、IP错误或无权限 \"}]",
+    "createTime": "2025-07-10T17:30:05.000+08:00",
+    "createUser": "jiangdequan",
+    "updateTime": "2025-11-06T16:52:13.000+08:00",
+    "updateUser": "zjhe",
+    "qaApiDemos": [
+      {
+        "id": "22983870950409011",
+        "apiDocId": 17279489252786709,
+        "seqNumber": 1,
+        "demoDesc": "开具结果获取RQ.xml",
+        "request": "{\r\n   \"requestId\": \"EITR1684898083100955956\",\r\n   \"ticketNumber\": \"7840000000809\",\r\n   \"office\": \"BJS191\",\r\n   \"fileType\": \"1,2\"\r\n}",
+        "response": "{\r\n   \"code\": \"1\",\r\n   \"data\": {\r\n      \"issueTime\": \"2023-05-24 11:14:43\",\r\n      \"itineraryNumber\": \"23448784210000000715\",\r\n      \"ofdFile\": \"xxxxxxxxxx\",\r\n      \"office\": \"BJS191\",\r\n      \"pngFile\": \"xxxxxxxxxx\",\r\n      \"requestId\": \"EITR1684898083100955956\",\r\n      \"ticketNumber\": \"7840000000809\"\r\n   },\r\n   \"message\": \"SUCCESS\"\r\n}",
+        "createTime": "2025-09-11T16:38:47.000+08:00",
+        "createUser": "jiangdequan",
+        "updateTime": null,
+        "updateUser": null
+      }
+    ],
+    "url": "/xml/GetItineraryIssueResultRPT"
+  }
+}

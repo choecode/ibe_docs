@@ -1,0 +1,47 @@
+{
+  "code": 200,
+  "msg": "处理成功！",
+  "data": {
+    "id": "17279491314287574",
+    "apiCode": "X33",
+    "apiNameEn": "ElectronicItineraryHistoryByOffice",
+    "apiNameCn": "电子行程单按OFFICE开具历史查询",
+    "introduce": "用户调用接口实现电子行程单按Offcie开具历史查询功能。",
+    "business": "电子行程单按Office开具历史查询",
+    "functions": "电子行程单按Office开具历史查询",
+    "requestSchema": "[{\"name\":\"office\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"Office\",\"children\":[]},{\"name\":\"issueDate\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"开具日期：YYYY-MM-DD\",\"children\":[]},{\"name\":\"pageNo\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"分页页码\",\"children\":[]},{\"name\":\"issueType\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"开票类型：0：蓝票； 1：红票，不设置默认不限\",\"children\":[]}]",
+    "responseSchema": "[{\"name\":\"code\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"错误码\",\"children\":[]},{\"name\":\"message\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"错误信息提示\",\"children\":[]},{\"name\":\"result\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"结果\",\"children\":[{\"name\":\"data\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"执行结果\",\"children\":[{\"name\":\"currentPageNo\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"当前页码：如果不指定页码，则默认返回第1页页码，如果指定，则返回指定页码\",\"children\":[]},{\"name\":\"hisItineraryInfos\",\"type\":\"array\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"\",\"children\":[{\"name\":\"issueDate\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"开具时间：YYYY-MM-DDTHH:MM:SS，开具成功时返回，开具中、开具失败均不返回\",\"children\":[]},{\"name\":\"issueType\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"开票类型：0：蓝票 1：红票\",\"children\":[]},{\"name\":\"itineraryNumber\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"电子行程单号：开具成功时返回，开具中、开具失败均不返回\",\"children\":[]},{\"name\":\"itineraryStatusCode\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"行程单状态：0：正常（蓝票，红票开具成功） 1：已冲红（蓝票冲红 成功）\",\"children\":[]},{\"name\":\"office\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"查询office：查询office\",\"children\":[]},{\"name\":\"ticketNumber\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"票号：票号\",\"children\":[]}]},{\"name\":\"totalPage\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"总页码：每150条结 果为1页。总页码=查询结果总数/150， 向上取整\",\"children\":[]}]}]}]",
+    "errorCodes": "[\r\n    {\r\n        \"code\": \" 403 \",\r\n        \"name\": null,\r\n        \"msg\": null,\r\n        \"msgZh\": \" 用户名、密码、IP错误或无权限 \"\r\n    },\r\n    {\r\n        \"code\": \" -390 \",\r\n        \"name\": null,\r\n        \"msg\": \"IBESERVICE_ERROR\",\r\n        \"msgZh\": \" IBE服务异常 \"\r\n    },\r\n    {\r\n        \"code\": \" -402 \",\r\n        \"name\": null,\r\n        \"msg\": \"INPUT_ERROR\",\r\n        \"msgZh\": \" 输入错误 \"\r\n    }\r\n]",
+    "createTime": "2025-07-10T17:30:07.000+08:00",
+    "createUser": "jiangdequan",
+    "updateTime": "2025-11-25T15:52:39.000+08:00",
+    "updateUser": "ylzhu",
+    "qaApiDemos": [
+      {
+        "id": "22983812095935388",
+        "apiDocId": 17279491314287574,
+        "seqNumber": 1,
+        "demoDesc": "电子行程单按Office开具历史查询RQ.json",
+        "request": "{\r\n  \"office\": \"BJS191\",\r\n  \"issueDate\": \"2024-05-06\",\r\n  \"pageNo\": \"1\",\r\n  \"issueType\": \"0\"\r\n}",
+        "response": "{\n    \"code\": \"1\",\n    \"message\": \"成功|SUCCESS\",\n    \"result\": {\n        \"data\": {\n            \"currentPageNo\": \"1\",\n            \"hisItineraryInfos\": [\n                {\n                    \"issueDate\": \"2023-11-27 09:13:37\",\n                    \"issueType\": \"1\",\n                    \"itineraryNumber\": \"121212\",\n                    \"itineraryStatusCode\": \"1\",\n                    \"office\": \"BJS191\",\n                    \"ticketNumber\": \"123123123\"\n                }\n            ],\n            \"totalPage\": \"1\"\n        }\n    }\n}\n",
+        "createTime": "2025-09-11T16:37:51.000+08:00",
+        "createUser": "jiangdequan",
+        "updateTime": "2025-09-22T16:37:27.000+08:00",
+        "updateUser": "ylzhu"
+      },
+      {
+        "id": "22983812181918394",
+        "apiDocId": 17279491314287574,
+        "seqNumber": 2,
+        "demoDesc": "电子行程单按Office开具历史查询RS.json",
+        "request": "{\r\n  \"code\": \"1\",\r\n  \"message\": \"成功|SUCCESS\",\r\n  \"result\": {\r\n      \"data\": {\r\n          \"currentPageNo\": \"1\",\r\n          \"hisItineraryInfos\": [\r\n              {\r\n                  \"issueDate\": \"2023-11-27 09:13:37\",\r\n                  \"issueType\": \"1\",\r\n                  \"itineraryNumber\": \"121212\",\r\n                  \"itineraryStatusCode\": \"1\",\r\n                  \"office\": \"BJS191\",\r\n                  \"ticketNumber\": \"123123123\"\r\n              }\r\n          ],\r\n          \"totalPage\": \"1\"\r\n      }\r\n  }\r\n}",
+        "response": null,
+        "createTime": "2025-09-11T16:37:51.000+08:00",
+        "createUser": "jiangdequan",
+        "updateTime": null,
+        "updateUser": null
+      }
+    ],
+    "url": "/xml/ElectronicItineraryHistoryByOffice"
+  }
+}

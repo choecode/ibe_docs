@@ -1,0 +1,47 @@
+{
+  "code": 200,
+  "msg": "处理成功！",
+  "data": {
+    "id": "17279490483814600",
+    "apiCode": "X31",
+    "apiNameEn": "ElectronicItineraryQuotaRPT",
+    "apiNameCn": "电子行程单剩余额度查询",
+    "introduce": "用户调用接口实现电子行程单剩余额度查询功能。查询返回office，quotaLimit。",
+    "business": "电子行程单剩余额度查询",
+    "functions": "电子行程单剩余额度查询",
+    "requestSchema": "[{\"name\":\"office\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"\",\"children\":[]}]",
+    "responseSchema": "[{\"name\":\"code\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"错误码\",\"children\":[]},{\"name\":\"data\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"结果\",\"children\":[{\"name\":\"office\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"Office号\",\"children\":[]},{\"name\":\"quotaLimit\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"剩余额度\",\"children\":[]}]},{\"name\":\"message\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"错误信息提示\",\"children\":[]}]",
+    "errorCodes": "[{\"code\":\" 403 \",\"name\":null,\"msg\":null,\"msgZh\":\" 用户名、密码、IP错误或无权限 \"}]",
+    "createTime": "2025-07-10T17:30:06.000+08:00",
+    "createUser": "jiangdequan",
+    "updateTime": "2025-11-07T09:06:36.000+08:00",
+    "updateUser": "zjhe",
+    "qaApiDemos": [
+      {
+        "id": "22983873636859989",
+        "apiDocId": 17279490483814600,
+        "seqNumber": 1,
+        "demoDesc": "电子行程单剩余额度查询RQ.json",
+        "request": "{\r\n    \"office\":\"TYN202\"\r\n}\r\n",
+        "response": null,
+        "createTime": "2025-09-11T16:38:50.000+08:00",
+        "createUser": "jiangdequan",
+        "updateTime": null,
+        "updateUser": null
+      },
+      {
+        "id": "22983873730183211",
+        "apiDocId": 17279490483814600,
+        "seqNumber": 2,
+        "demoDesc": "电子行程单剩余额度查询RS.json",
+        "request": "{\r\n    \"code\": \"1\",\r\n    \"data\": {\r\n       \"office\": \"TYN202\",\r\n       \"quotaLimit\": 1487\r\n    },\r\n    \"message\": \"成功|SUCCESS\"\r\n }",
+        "response": null,
+        "createTime": "2025-09-11T16:38:50.000+08:00",
+        "createUser": "jiangdequan",
+        "updateTime": null,
+        "updateUser": null
+      }
+    ],
+    "url": "/xml/ElectronicItineraryQuotaRPT"
+  }
+}

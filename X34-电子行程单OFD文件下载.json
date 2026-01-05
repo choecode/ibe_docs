@@ -1,0 +1,47 @@
+{
+  "code": 200,
+  "msg": "处理成功！",
+  "data": {
+    "id": "14651172494246467",
+    "apiCode": "X34",
+    "apiNameEn": "ElectronicItineraryOFDFileGet",
+    "apiNameCn": "电子行程单OFD文件下载",
+    "introduce": "用户调用接口实现电子行程单OFD/PDF文件下载。",
+    "business": "电子行程单OFD/PDF文件下载",
+    "functions": "电子行程单OFD/PDF文件下载",
+    "requestSchema": "[{\"name\":\"office\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"Office\",\"children\":[]},{\"name\":\"itineraryNumber\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"行程单号\",\"children\":[]},{\"name\":\"fileType\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"文件类型：1为OFD；2为PDF，不填默认为OFD\",\"children\":[]}]",
+    "responseSchema": "[{\"name\":\"code\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"错误码\",\"children\":[]},{\"name\":\"message\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"错误信息提示\",\"children\":[]},{\"name\":\"result\",\"type\":\"object\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"结果\",\"children\":[{\"name\":\"data\",\"type\":\"object\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"执行结果\",\"children\":[{\"name\":\"itineraryNumber\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"行程单号\",\"children\":[]},{\"name\":\"ofdFile\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"OFD 文件流：Base64 编码过的 OFD 文件流\",\"children\":[]},{\"name\":\"pdfFile\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"PDF文件流：Base64 编码过的 PDF文件流\",\"children\":[]}]}]}]",
+    "errorCodes": "[{\"code\":\" 403 \",\"name\":null,\"msg\":null,\"msgZh\":\" 用户名、密码、IP错误或无权限 \"}]",
+    "createTime": "2025-06-11T17:14:06.000+08:00",
+    "createUser": "ycyin",
+    "updateTime": "2025-11-06T13:31:09.000+08:00",
+    "updateUser": "zjhe",
+    "qaApiDemos": [
+      {
+        "id": "22983762243486676",
+        "apiDocId": 14651172494246467,
+        "seqNumber": 1,
+        "demoDesc": "电子行程单成功下载OFD文件RQ.xml",
+        "request": "{\r\n  \"office\": \"BJS191\",\r\n  \"itineraryNumber\": \"24508781210000001122\"\r\n}",
+        "response": "{\r\n   \"code\": \"1\",\r\n   \"message\": \"成功|SUCCESS\",\r\n   \"result\": {\r\n      \"data\": {\r\n         \"itineraryNumber\": \"24508781110000044593\",\r\n         \"ofdFile\": \"\"\r\n      }\r\n   }\r\n}",
+        "createTime": "2025-09-11T16:37:03.000+08:00",
+        "createUser": "jiangdequan",
+        "updateTime": null,
+        "updateUser": null
+      },
+      {
+        "id": "22983762332614913",
+        "apiDocId": 14651172494246467,
+        "seqNumber": 2,
+        "demoDesc": "电子行程单成功下载PDF文件RQ.xml",
+        "request": "{\r\n  \"office\": \"SHA384\",\r\n  \"itineraryNumber\": \"25658999210500000003\",\r\n  \"fileType\": \"2\"\r\n}",
+        "response": "{\r\n   \"code\": \"1\",\r\n   \"message\": \"成功|SUCCESS\",\r\n   \"result\": {\r\n      \"data\": {\r\n         \"itineraryNumber\": \"24508781110000044593\",\r\n         \"pdfFile\": \"\"\r\n      }\r\n   }\r\n}",
+        "createTime": "2025-09-11T16:37:03.000+08:00",
+        "createUser": "jiangdequan",
+        "updateTime": null,
+        "updateUser": null
+      }
+    ],
+    "url": "/xml/ElectronicItineraryOFDFileGet"
+  }
+}
