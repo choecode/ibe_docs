@@ -1,0 +1,47 @@
+{
+  "code": 200,
+  "msg": "处理成功！",
+  "data": {
+    "id": "22327999688868225",
+    "apiCode": "N5",
+    "apiNameEn": "NewEMDAuthProducts",
+    "apiNameCn": "EMDS授权产品查询",
+    "introduce": "提供EMDS权限查询服务。",
+    "business": "查询EMDS所有航司已开通的权限产品\\R查询指定航司EMDS已开通的权限产品",
+    "functions": "查询EMDS权限",
+    "requestSchema": "[{\"name\":\"Travelsky_EMD_AgentProductInfoRQ\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"授权信息查询\",\"children\":[{\"name\":\"QueryCondition\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"授权查询\",\"children\":[{\"name\":\"@Airline\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"航司\",\"children\":[]},{\"name\":\"@OfficeID\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"office\",\"children\":[]}]}]}]",
+    "responseSchema": "[{\"name\":\"Travelsky_EMD_AgentProductInfoRS\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"授权信息查询响应\",\"children\":[{\"name\":\"Errors\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"包含与处理前一请求期间检测到的错误相关的信息\",\"children\":[{\"name\":\"Error\",\"type\":\"array\",\"quantity\":\"0..n\",\"default\":\"\",\"description\":\"错误信息处理\",\"children\":[{\"name\":\"@Code\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"错误码\",\"children\":[]},{\"name\":\"@ShortText\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"错误信息\",\"children\":[]}]}]},{\"name\":\"ProductList\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"产品信息列表\",\"children\":[{\"name\":\"Product\",\"type\":\"array\",\"quantity\":\"0..n\",\"default\":\"\",\"description\":\"产品信息\",\"children\":[{\"name\":\"@Airline\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"航司\",\"children\":[]},{\"name\":\"@AssociatedWithET\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"关联ET票号\",\"children\":[]},{\"name\":\"@AssociatedWithPNR\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"关联PNR\",\"children\":[]},{\"name\":\"@Code\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"RFIC\",\"children\":[]},{\"name\":\"@ConsumedAtIssuanceInd\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"出票即消费\",\"children\":[]},{\"name\":\"@Description\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"英文描述\",\"children\":[]},{\"name\":\"@ServiceCode\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"服务代码\",\"children\":[]},{\"name\":\"@SubCode\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"RFISC\",\"children\":[]},{\"name\":\"@Type\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"\",\"children\":[]}]}]}]}]",
+    "errorCodes": "[{\"code\":\" 403 \",\"name\":null,\"msg\":null,\"msgZh\":\" 用户名、密码、IP错误或无权限 \"},{\"code\":\" -303 \",\"name\":null,\"msg\":\" inner service error \",\"msgZh\":\" 内部服务异常 \"},{\"code\":null,\"name\":null,\"msg\":null,\"msgZh\":null},{\"code\":null,\"name\":null,\"msg\":null,\"msgZh\":null},{\"code\":null,\"name\":null,\"msg\":null,\"msgZh\":null},{\"code\":null,\"name\":null,\"msg\":null,\"msgZh\":null},{\"code\":null,\"name\":null,\"msg\":null,\"msgZh\":null},{\"code\":null,\"name\":null,\"msg\":null,\"msgZh\":null},{\"code\":null,\"name\":null,\"msg\":null,\"msgZh\":null},{\"code\":null,\"name\":null,\"msg\":null,\"msgZh\":null},{\"code\":null,\"name\":null,\"msg\":null,\"msgZh\":null},{\"code\":null,\"name\":null,\"msg\":null,\"msgZh\":null},{\"code\":null,\"name\":null,\"msg\":null,\"msgZh\":null},{\"code\":null,\"name\":null,\"msg\":null,\"msgZh\":null},{\"code\":null,\"name\":null,\"msg\":null,\"msgZh\":null},{\"code\":null,\"name\":null,\"msg\":null,\"msgZh\":null}]",
+    "createTime": "2025-09-04T10:53:59.000+08:00",
+    "createUser": "jiangdequan",
+    "updateTime": "2025-11-28T10:48:55.000+08:00",
+    "updateUser": "zjhe",
+    "qaApiDemos": [
+      {
+        "id": "22338714938114275",
+        "apiDocId": 22327999688868225,
+        "seqNumber": 1,
+        "demoDesc": "NewEMDAuthProductsRQ.xml",
+        "request": "<Travelsky_EMD_AgentProductInfoRQ>\r\n    <QueryCondition Airline=\"AM\" OfficeID=\"BJS247\"/>\r\n</Travelsky_EMD_AgentProductInfoRQ>",
+        "response": null,
+        "createTime": "2025-09-04T13:44:18.000+08:00",
+        "createUser": "jiangdequan",
+        "updateTime": null,
+        "updateUser": null
+      },
+      {
+        "id": "30026333782278652",
+        "apiDocId": 22327999688868225,
+        "seqNumber": 2,
+        "demoDesc": "全航司查询",
+        "request": "<Travelsky_EMD_AgentProductInfoRQ>\n<QueryCondition OfficeID=\"BJS247\"/>\n</Travelsky_EMD_AgentProductInfoRQ>",
+        "response": "返回",
+        "createTime": "2025-11-28T10:15:43.000+08:00",
+        "createUser": "zjhe",
+        "updateTime": null,
+        "updateUser": null
+      }
+    ],
+    "url": "/xml/NewEMDAuthProducts"
+  }
+}

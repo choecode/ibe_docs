@@ -1,0 +1,35 @@
+{
+  "code": 200,
+  "msg": "处理成功！",
+  "data": {
+    "id": "17279416646238679",
+    "apiCode": "F40",
+    "apiNameEn": "AirQueryTQTD",
+    "apiNameCn": "出票限额查询接口",
+    "introduce": "用于查询出票限额，即当前office下所有航司的票池额度，以及已使用的票池额度情况。",
+    "business": "用于查询出票限额，即当前office下所有航司的票池额度，以及已使用的票池额度情况。\r\n备注：只支持查询，不支持修改。",
+    "functions": "1、自动查询出当前 OFFICE 下所有航司的出票限额列表",
+    "requestSchema": "[{\"name\":\"TES_AirQueryTQTDRQ\",\"type\":\"object\",\"quantity\":\"1\",\"description\":\"出票限额查询请求\",\"children\":[{\"name\":\"POS\",\"type\":\"object\",\"quantity\":\"1\",\"description\":\"Point Of Sale\",\"children\":[{\"name\":\"Source\",\"type\":\"object\",\"quantity\":\"1\",\"description\":\"请求者信息\",\"children\":[{\"name\":\"@PseudoCityCode\",\"type\":\"string\",\"quantity\":\"1\",\"description\":\"伪城市代码（Office代码：PKE099）\",\"children\":[],\"default\":\"\"}],\"default\":\"\"}],\"default\":\"\"},{\"name\":\"UAL\",\"type\":\"string\",\"quantity\":\"0..n\",\"description\":\"变更后的航空公司二字码\",\"children\":[],\"default\":\"\"},{\"name\":\"UC\",\"type\":\"string\",\"quantity\":\"0..n\",\"description\":\"变更后的Office编号\",\"children\":[],\"default\":\"\"},{\"name\":\"Office\",\"type\":\"string\",\"quantity\":\"1\",\"description\":\"Office号\",\"children\":[],\"default\":\"\"}],\"default\":\"\"}]",
+    "responseSchema": "[{\"name\":\"TES_AirQueryTQTDRS\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"出票限额查询返回\",\"children\":[{\"name\":\"Errors\",\"type\":\"array\",\"quantity\":\"0..n\",\"default\":\"\",\"description\":\"错误信息集合\",\"children\":[{\"name\":\"Error\",\"type\":\"array\",\"quantity\":\"0..n\",\"default\":\"\",\"description\":\"错误信息\",\"children\":[{\"name\":\"Trace\",\"type\":\"array\",\"quantity\":\"0..n\",\"default\":\"\",\"description\":\"错误详细描述或者内部异常信息\",\"children\":[{\"name\":\"@Code\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"编码\",\"children\":[]},{\"name\":\"@Text\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"文本\",\"children\":[]}]},{\"name\":\"@Code\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"错误代码（数字）\",\"children\":[]},{\"name\":\"@Type\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"错误类型\",\"children\":[]},{\"name\":\"@ShortText\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"错误描述信息（英文）\",\"children\":[]},{\"name\":\"@ShortTextZH\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"错误描述信息（中文）\",\"children\":[]}]}]},{\"name\":\"Office\",\"type\":\"string\",\"quantity\":\"0..n\",\"default\":\"\",\"description\":\"Office号\",\"children\":[]},{\"name\":\"AirlineQuotaInfos\",\"type\":\"array\",\"quantity\":\"0..n\",\"default\":\"\",\"description\":\"航司结算列表\",\"children\":[{\"name\":\"AirlineQuotaInfo\",\"type\":\"array\",\"quantity\":\"0..n\",\"default\":\"\",\"description\":\"\",\"children\":[{\"name\":\"AirlineCode\",\"type\":\"string\",\"quantity\":\"0..n\",\"default\":\"\",\"description\":\"航司二字代码\",\"children\":[]},{\"name\":\"CurrQuota\",\"type\":\"int\",\"quantity\":\"0..n\",\"default\":\"\",\"description\":\"结算周期可出的票数量\",\"children\":[]},{\"name\":\"TktIssued\",\"type\":\"int\",\"quantity\":\"0..n\",\"default\":\"\",\"description\":\"结算周期已经出票的数量\",\"children\":[]},{\"name\":\"TempQuota\",\"type\":\"int\",\"quantity\":\"0..n\",\"default\":\"\",\"description\":\"结算周期临时可出的票数量\",\"children\":[]},{\"name\":\"QuotaNext\",\"type\":\"int\",\"quantity\":\"0..n\",\"default\":\"\",\"description\":\"下一个结算周期可出的票数量\",\"children\":[]},{\"name\":\"WebQuota\",\"type\":\"int\",\"quantity\":\"0..n\",\"default\":\"\",\"description\":\"结算周期weblink可出的票数量\",\"children\":[]},{\"name\":\"WebIssued\",\"type\":\"int\",\"quantity\":\"0..n\",\"default\":\"\",\"description\":\"结算周期weblink已经出票的数量\",\"children\":[]}]}]}]}]",
+    "errorCodes": "[]",
+    "createTime": "2025-07-10T17:28:55.000+08:00",
+    "createUser": "jiangdequan",
+    "updateTime": "2025-11-04T10:07:33.000+08:00",
+    "updateUser": "zjhe",
+    "qaApiDemos": [
+      {
+        "id": "22259525178360113",
+        "apiDocId": 17279416646238679,
+        "seqNumber": 1,
+        "demoDesc": "出票限额查询.xml",
+        "request": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<TES_AirQueryTQTDRQ>\r\n    <POS>\r\n        <Source PseudoCityCode=\"TYO645\"/>\r\n    </POS>\r\n    <Office>TYO645</Office>\r\n</TES_AirQueryTQTDRQ>",
+        "response": null,
+        "createTime": "2025-09-03T16:45:37.000+08:00",
+        "createUser": "jiangdequan",
+        "updateTime": null,
+        "updateUser": null
+      }
+    ],
+    "url": "/xml/AirQueryTQTD"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "code": 200,
+  "msg": "处理成功！",
+  "data": {
+    "id": "17279441112662627",
+    "apiCode": "N7",
+    "apiNameEn": "NewEMDFareAvail",
+    "apiNameCn": "EMD运价查询",
+    "introduce": "提供EMD运价查询服务。",
+    "business": "EMD运价查询服务",
+    "functions": "付费行李运价查询\r\n付费座位运价查询\r\n无人陪伴儿童运价查询",
+    "requestSchema": "[{\"name\":\"FareRulesRQ\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"运价请求\",\"children\":[{\"name\":\"Header\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"\",\"children\":[{\"name\":\"ServiceName\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"服务名称\",\"children\":[]},{\"name\":\"AirLine\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"航司二字码\",\"children\":[]}]},{\"name\":\"PointOfSale\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"销售网点信息\",\"children\":[{\"name\":\"@Airline\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"航司二字码：EY\",\"children\":[]},{\"name\":\"@ChannelID\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"【固定值1E】渠道标识\",\"children\":[]},{\"name\":\"@PseudoCityCode\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"office号：bjs247\",\"children\":[]}]},{\"name\":\"Query\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"查询数据\",\"children\":[{\"name\":\"FareReferences\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"运价依赖信息\",\"children\":[{\"name\":\"Ref_PNR\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"pnr号：JNYQ2E\",\"children\":[]},{\"name\":\"Ref_FlightRPH\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"航班rph ：3\",\"children\":[]},{\"name\":\"Ref_ET\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"et号0671232111121122\",\"children\":[]}]},{\"name\":\"AirlineID\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"航司二字码：EY\",\"children\":[]},{\"name\":\"ServiceInfos\",\"type\":\"array\",\"quantity\":\"0..n\",\"default\":\"\",\"description\":\"【座位运价时必须】座位属性组\",\"children\":[{\"name\":\"SeatCharacteristics\",\"type\":\"array\",\"quantity\":\"0..n\",\"default\":\"\",\"description\":\"多属性座位信息\",\"children\":[]}]}]},{\"name\":\"@EchoToken\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"追踪token\",\"children\":[]}]}]",
+    "responseSchema": "[{\"name\":\"FareRulesRS\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"正确响应\",\"children\":[{\"name\":\"Success\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"成功\",\"children\":[]},{\"name\":\"Rules\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"运价列表\",\"children\":[{\"name\":\"Rule\",\"type\":\"array\",\"quantity\":\"0..n\",\"default\":\"\",\"description\":\"运价\",\"children\":[{\"name\":\"FareInfo\",\"type\":\"array\",\"quantity\":\"0..2\",\"default\":\"\",\"description\":\"运价组\",\"children\":[{\"name\":\"@Amount\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"价格：223\",\"children\":[]},{\"name\":\"@CurrencyCode\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"货币：CNY\",\"children\":[]}]},{\"name\":\"@Description\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"描述\",\"children\":[]},{\"name\":\"@FareType\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"运价类型\",\"children\":[]},{\"name\":\"@InfoCode\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"信息码\",\"children\":[]},{\"name\":\"@ReasonCode\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"原因码：C\",\"children\":[]},{\"name\":\"@SubCode\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"原因子码：0C5\",\"children\":[]}]}]},{\"name\":\"Errors\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"请求处理失败\",\"children\":[{\"name\":\"Error\",\"type\":\"array\",\"quantity\":\"0..n\",\"default\":\"\",\"description\":\"请求处理失败\",\"children\":[{\"name\":\"@Code\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"错误码\",\"children\":[]},{\"name\":\"@ShortText\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"错误信息\",\"children\":[]},{\"name\":\"Trace\",\"type\":\"array\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"底层错误信息\",\"children\":[{\"name\":\"IATA_EMD_ErrorRs\",\"type\":\"array\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"底层错误信息\",\"children\":[{\"name\":\"ErrorCode\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"底层错误码\",\"children\":[]},{\"name\":\"ErrorDesCn\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"底层错误中文错误描述\",\"children\":[]},{\"name\":\"ErrorDesEn\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"底层错误英文错误描述\",\"children\":[]}]}]}]}]}]}]",
+    "errorCodes": "[\r\n    {\r\n        \"code\": 403,\r\n        \"name\": \"\",\r\n        \"msg\": \"\",\r\n        \"msgZh\": \" 用户名、密码、IP错误或无权限 \"\r\n    },\r\n    {\r\n        \"code\": -303,\r\n        \"name\": \"\",\r\n        \"msg\": \" inner service error \",\r\n        \"msgZh\": \" 内部服务异常 \"\r\n    },\r\n    {\r\n        \"code\": -301,\r\n        \"name\": \"\",\r\n        \"msg\": \" office permission denied \",\r\n        \"msgZh\": \" office认证失败 \"\r\n    },\r\n    {\r\n        \"code\": -395,\r\n        \"name\": \"\",\r\n        \"msg\": \" Http Request Failed \",\r\n        \"msgZh\": \" Http请求失败 \"\r\n    },\r\n    {\r\n        \"code\": -83000,\r\n        \"name\": \"\",\r\n        \"msg\": \" EMD service Error \",\r\n        \"msgZh\": \" EMD服务异常 \"\r\n    }\r\n]",
+    "createTime": "2025-07-10T17:29:19.000+08:00",
+    "createUser": "jiangdequan",
+    "updateTime": "2025-11-28T09:49:50.000+08:00",
+    "updateUser": "ylzhu",
+    "qaApiDemos": [
+      {
+        "id": "22339865392710610",
+        "apiDocId": 17279441112662627,
+        "seqNumber": 1,
+        "demoDesc": "付费行李.xml",
+        "request": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<FareRulesRQ>\r\n    <Header>\r\n        <ServiceName>FAREBAGG</ServiceName>\r\n        <AirLine>EY</AirLine>\r\n    </Header>\r\n    <PointOfSale Airline=\"EY\" ChannelID=\"IE\" PseudoCityCode=\"BJS247\" />\r\n    <Query>\r\n        <FareReferences>\r\n            <Ref_PNR>HS6DE6</Ref_PNR>\r\n            <Ref_ET>6076356888267</Ref_ET>\r\n            <Ref_FlightRPH>2</Ref_FlightRPH>\r\n        </FareReferences>\r\n        <AirlineID>EY</AirlineID>\r\n    </Query>\r\n</FareRulesRQ>",
+        "response": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<FareRulesRS>\n    <Success>Success</Success>\n    <Rules>\n        <Rule SubCode=\"0C1\" ReasonCode=\"C\" InfoCode=\"0\" FareType=\"QUERY\" Description=\"UPTO33LB 15KG BAGGAGE\">\n            <FareInfo CurrencyCode=\"CNY\" Amount=\"2378\"/>\n            <FareInfo CurrencyCode=\"USD\" Amount=\"338.00\"/>\n        </Rule>\n        <Rule SubCode=\"0C2\" ReasonCode=\"C\" InfoCode=\"0\" FareType=\"QUERY\" Description=\"UPTO44LB 20KG BAGGAGE\">\n            <FareInfo CurrencyCode=\"CNY\" Amount=\"3166\"/>\n            <FareInfo CurrencyCode=\"USD\" Amount=\"450.00\"/>\n        </Rule>\n    </Rules>\n</FareRulesRS>",
+        "createTime": "2025-09-04T14:02:35.000+08:00",
+        "createUser": "jiangdequan",
+        "updateTime": "2025-11-28T09:55:03.000+08:00",
+        "updateUser": "ylzhu"
+      },
+      {
+        "id": "22339865525879608",
+        "apiDocId": 17279441112662627,
+        "seqNumber": 2,
+        "demoDesc": "多属性座位运价.xml",
+        "request": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<FareRulesRQ>\r\n<Header>\r\n        <ServiceName>FARESEAT</ServiceName>\r\n        <AirLine>LO</AirLine>\r\n    </Header>\r\n    <PointOfSale Airline=\"LO\" ChannelID=\"IE\" PseudoCityCode=\"BJS247\" />\r\n    <Query>\r\n        <FareReferences>\r\n            <Ref_PNR>HRD099</Ref_PNR>\r\n            <Ref_ET>2206356888965</Ref_ET>\r\n            <Ref_FlightRPH>2</Ref_FlightRPH>\r\n        </FareReferences>\r\n    \t<ServiceInfos>\r\n    \t\t<SeatCharacteristics>CH</SeatCharacteristics>\r\n    \t\t<SeatCharacteristics>FC</SeatCharacteristics>\r\n    \t\t<SeatCharacteristics>O</SeatCharacteristics>\r\n    \t    <SeatCharacteristics>W</SeatCharacteristics>\r\n    \t</ServiceInfos>\r\n        <AirlineID>LO</AirlineID>   \r\n    </Query>\r\n</FareRulesRQ>",
+        "response": "<?xml？version=\"1.0\"？encoding=\"UTF-8\"?>\n<FareRulesRS>\n？<Success>Success</Success>\n？<Rules>\n？？<Rule？SubCode=\"0B5\"？ReasonCode=\"A\"？InfoCode=\"\"？FareType=\"\"？Description=\"PRE？RESERVED？SEAT？ASSIGNMENT\">\n？？？<FareInfo？CurrencyCode=\"EUR\"？Amount=\"28.00\"/>\n？？？<FareInfo？CurrencyCode=\"CNY\"？Amount=\"218\"/>\n？？</Rule>\n？</Rules>\n</FareRulesRS>",
+        "createTime": "2025-09-04T14:02:36.000+08:00",
+        "createUser": "jiangdequan",
+        "updateTime": "2025-11-28T09:55:16.000+08:00",
+        "updateUser": "ylzhu"
+      },
+      {
+        "id": "22339866002981861",
+        "apiDocId": 17279441112662627,
+        "seqNumber": 3,
+        "demoDesc": "无人陪伴儿童.xml",
+        "request": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<FareRulesRQ>\r\n<Header>\r\n    <ServiceName>FAREUMNR</ServiceName>\r\n    <AirLine>PS</AirLine>\r\n</Header>\r\n<PointOfSale Airline=\"PS\" ChannelID=\"IE\" PseudoCityCode=\"BJS247\" />\r\n<Query>\r\n    <FareReferences>\r\n        <Ref_PNR>KQTJFB</Ref_PNR>\r\n        <Ref_ET>5666356888911</Ref_ET>\r\n        <Ref_FlightRPH>2</Ref_FlightRPH>\r\n        <Ref_Age>2</Ref_Age>\r\n    </FareReferences>\r\n    <AirlineID>PS</AirlineID>\r\n</Query>\r\n</FareRulesRQ>",
+        "response": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<FareRulesRS>\n    <Success>Success</Success>\n    <Rules>\n        <Rule SubCode=\"0BH\" ReasonCode=\"E\" InfoCode=\"0\" FareType=\"QUERY\" Description=\"UNACCOMPANIED MINOR\">\n            <FareInfo CurrencyCode=\"CNY\" Amount=\"556\"/>\n            <FareInfo CurrencyCode=\"EUR\" Amount=\"71.00\"/>\n        </Rule>\n    </Rules>\n</FareRulesRS>",
+        "createTime": "2025-09-04T14:02:36.000+08:00",
+        "createUser": "jiangdequan",
+        "updateTime": "2025-11-28T09:55:29.000+08:00",
+        "updateUser": "ylzhu"
+      }
+    ],
+    "url": "/xml/NewEMDFareAvail"
+  }
+}

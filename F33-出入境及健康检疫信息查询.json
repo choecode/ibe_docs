@@ -1,0 +1,35 @@
+{
+  "code": 200,
+  "msg": "处理成功！",
+  "data": {
+    "id": "17279413431305130",
+    "apiCode": "F33",
+    "apiNameEn": "AirTimAndWtInfo",
+    "apiNameCn": "出入境及健康检疫信息查询",
+    "introduce": "查询签证,出入境,健康检疫等信息，对应黑屏指令TIM。",
+    "business": "支持查询签证,出入境,健康检疫等信息。",
+    "functions": "支持查询与出入境有关的信息，支持签证, 健康检疫等信息查询，支持功能同黑屏TIM指令一致。  ",
+    "requestSchema": "[{\"name\":\"TES_AirTimAndWtInfoRQ\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"出入境及健康检疫信息查询请求信息\",\"children\":[{\"name\":\"POS\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"Point Of Sale\",\"children\":[{\"name\":\"Source\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"请求者信息\",\"children\":[{\"name\":\"@PseudoCityCode\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"伪城市代码（Office代码：PKE099）\",\"children\":[]}]}]},{\"name\":\"TimAndWtInfoRequest\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"\",\"children\":[{\"name\":\"PID\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"pid号\",\"children\":[]},{\"name\":\"Command\",\"type\":\"string\",\"quantity\":\"0..n\",\"default\":\"\",\"description\":\"手动输入指令\",\"children\":[]}]}]}]",
+    "responseSchema": "[{\"name\":\"TES_AirTimAndWtInfoRS\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"出入境及健康检疫信息查询返回信息\",\"children\":[{\"name\":\"Errors\",\"type\":\"array\",\"quantity\":\"0..n\",\"default\":\"\",\"description\":\"错误信息集合\",\"children\":[{\"name\":\"Error\",\"type\":\"array\",\"quantity\":\"0..n\",\"default\":\"\",\"description\":\"错误信息\",\"children\":[{\"name\":\"Trace\",\"type\":\"array\",\"quantity\":\"0..n\",\"default\":\"\",\"description\":\"错误详细描述或者内部异常信息\",\"children\":[{\"name\":\"@Code\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"编码\",\"children\":[]},{\"name\":\"@Text\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"文本\",\"children\":[]}]},{\"name\":\"@Code\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"错误代码（数字）\",\"children\":[]},{\"name\":\"@Type\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"错误类型\",\"children\":[]},{\"name\":\"@ShortText\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"错误描述信息（英文）\",\"children\":[]},{\"name\":\"@ShortTextZH\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"错误描述信息（中文）\",\"children\":[]}]}]},{\"name\":\"Result\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"出入境及健康检疫信息查询返回结果\",\"children\":[]}]}]",
+    "errorCodes": "[{\"code\":403,\"name\":\"\",\"msg\":\"\",\"msgZh\":\"用户名、密码、IP错误或无权限\"},{\"code\":-1,\"name\":\"\",\"msg\":\"Biz Error\",\"msgZh\":\"业务异常\"},{\"code\":-301,\"name\":\"\",\"msg\":\"office permission denied\",\"msgZh\":\"Office没有权限\"},{\"code\":-303,\"name\":\"\",\"msg\":\"Inner service error!\",\"msgZh\":\"内部服务错误\"},{\"code\":-304,\"name\":\"\",\"msg\":\"sending commands too fast, try again later\",\"msgZh\":\"访问速度过快,请稍后再试\"},{\"code\":-306,\"name\":\"\",\"msg\":\"too many concurrent request for service\",\"msgZh\":\"访问频率限制\"},{\"code\":-400,\"name\":\"\",\"msg\":\"format of xml string is not valid\",\"msgZh\":\"xml内容格式错误\"},{\"code\":-402,\"name\":\"\",\"msg\":\"input error\",\"msgZh\":\"输入错误\"},{\"code\":-10000,\"name\":\"\",\"msg\":\"response is empty\",\"msgZh\":\"返回信息为空\"}]",
+    "createTime": "2025-07-10T17:28:52.000+08:00",
+    "createUser": "jiangdequan",
+    "updateTime": "2025-11-10T13:03:24.000+08:00",
+    "updateUser": "zjhe",
+    "qaApiDemos": [
+      {
+        "id": "22259515379417570",
+        "apiDocId": 17279413431305130,
+        "seqNumber": 1,
+        "demoDesc": "AirTimAndWtInfoRQ.xml",
+        "request": "<TES_AirTimAndWtInfoRQ>\r\n    <POS>\r\n        <!-- office号 -->\r\n        <Source PseudoCityCode=\"TYN202\"/>\r\n    </POS>\r\n    <TimAndWtInfoRequest>\r\n        <PID></PID>\r\n        <!-- 手动输入指令 -->\r\n        <Command>TIM TIFV</Command>\r\n    </TimAndWtInfoRequest>\r\n</TES_AirTimAndWtInfoRQ>",
+        "response": null,
+        "createTime": "2025-09-03T16:45:28.000+08:00",
+        "createUser": "jiangdequan",
+        "updateTime": null,
+        "updateUser": null
+      }
+    ],
+    "url": "/xml/AirTimAndWtInfo"
+  }
+}
