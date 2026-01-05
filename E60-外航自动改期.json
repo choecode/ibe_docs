@@ -1,0 +1,35 @@
+{
+  "code": 200,
+  "msg": "处理成功！",
+  "data": {
+    "id": "17279178701275495",
+    "apiCode": "E60",
+    "apiNameEn": "AirRevalidation",
+    "apiNameCn": "外航自动改期",
+    "introduce": "该接口用于外航自动改期使用，对应原黑屏RVAL指令。",
+    "business": "外航自动改期。票面航段状态目前支持OPEN FOR USE和AIRPORT/CNTL状态下改期。 每次改期只能修改一人一段。",
+    "functions": "该接口用于外航自动改期使用，接口返回改期成功后，建议先提取记录，核对记录中是否有新航段SSR TKNE 项写入，再提取票面核对票面需要改期的航段是否是更改后的新航段。",
+    "requestSchema": "[{\"name\":\"TES_AirRevalidationRQ\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"外航自动改期\",\"children\":[{\"name\":\"RVALRequest\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"\",\"children\":[{\"name\":\"Query\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"\",\"children\":[{\"name\":\"CouponID\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"couponID\",\"children\":[]},{\"name\":\"PassengerName\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"旅客姓名\",\"children\":[]},{\"name\":\"PassengerIndex\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"旅客序号\",\"children\":[]},{\"name\":\"TicketNumber\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"票号\",\"children\":[]},{\"name\":\"RecordLocator\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"Pnr号\",\"children\":[]},{\"name\":\"SegmentInfo\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"航段信息\",\"children\":[{\"name\":\"DepartureDate\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"起飞时间\",\"children\":[]},{\"name\":\"ActionCode\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"行动码\",\"children\":[]},{\"name\":\"ArrivalCityCode\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"到达城市\",\"children\":[]},{\"name\":\"DepartureCityCode\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"始发城市\",\"children\":[]},{\"name\":\"CabinType\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"舱位\",\"children\":[]},{\"name\":\"FlightSuffix\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"航班号后缀\",\"children\":[]},{\"name\":\"FlightNumber\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"航班号\",\"children\":[]},{\"name\":\"AirlineID\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"航空公司代码\",\"children\":[]}]}]}]},{\"name\":\"POS\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"\",\"children\":[{\"name\":\"Source\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"请求者信息\",\"children\":[{\"name\":\"@PseudoCityCode\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"伪城市代码（Office代码：PKE099）\",\"children\":[]}]}]}]}]",
+    "responseSchema": "[{\"name\":\"TES_AirRevalidationRS\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"外航自动改期\",\"children\":[{\"name\":\"Success\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"\",\"children\":[]},{\"name\":\"Errors\",\"type\":\"array\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"错误信息集合\",\"children\":[{\"name\":\"Error\",\"type\":\"array\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"错误信息\",\"children\":[{\"name\":\"@Code\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"错误代码（数字）\",\"children\":[]},{\"name\":\"@Type\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"错误类型\",\"children\":[]},{\"name\":\"@ShortText\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"错误描述信息（英文）\",\"children\":[]},{\"name\":\"@ShortTextZH\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"错误描述信息（中文）\",\"children\":[]}]}]}]}]",
+    "errorCodes": "[{\"code\":\" 403 \",\"name\":null,\"msg\":null,\"msgZh\":\" 用户名、密码、IP错误或无权限 \"},{\"code\":\" -303 \",\"name\":null,\"msg\":\" inner service error \",\"msgZh\":\" 内部服务异常 \"},{\"code\":\" -304 \",\"name\":null,\"msg\":\" sending commands too fast, try again later \",\"msgZh\":\" 访问速度过快,请稍后再试 \"},{\"code\":\" -305 \",\"name\":null,\"msg\":\" transaction times limited \",\"msgZh\":\" 访问次数限制 \"},{\"code\":\" -301 \",\"name\":null,\"msg\":\" office permission denied \",\"msgZh\":\" Office 没有权限 \"},{\"code\":\" -390 \",\"name\":null,\"msg\":\" IBE Service Error \",\"msgZh\":\" IBE服务异常 \"},{\"code\":\" -311 \",\"name\":null,\"msg\":\" time out, please try again later \",\"msgZh\":\" 操作超时，请稍后再试 \"},{\"code\":\" -306 \",\"name\":null,\"msg\":\" too many concurrent request for service \",\"msgZh\":\" 访问频率限制 \"},{\"code\":\" -1 \",\"name\":null,\"msg\":\" Biz Error \",\"msgZh\":\" 业务异常 \"},{\"code\":\" -400 \",\"name\":null,\"msg\":\" format of xml string is not valid \",\"msgZh\":\" xml内容格式错误 \"},{\"code\":\" -402 \",\"name\":null,\"msg\":\" Input error! \",\"msgZh\":\" 输入参数出错 \"}]",
+    "createTime": "2025-07-10T17:25:08.000+08:00",
+    "createUser": "jiangdequan",
+    "updateTime": "2025-09-19T15:37:13.000+08:00",
+    "updateUser": "xyi",
+    "qaApiDemos": [
+      {
+        "id": "22259333752423420",
+        "apiDocId": 17279178701275495,
+        "seqNumber": 1,
+        "demoDesc": "成功改期.xml",
+        "request": "<AirRevalidationRQ>\r\n    <POS>\r\n        <!-- Office号 -->\r\n        <Source PseudoCityCode=\"SHA384\"/>\r\n    </POS>\r\n    <RVALRequest>\r\n        <Query>\r\n            <CouponID>C1</CouponID>\r\n            <PassengerName>MAI/DOU</PassengerName>\r\n            <PassengerIndex>P1</PassengerIndex>\r\n            <TicketNumber>988-6637996778</TicketNumber>\r\n            <RecordLocator>KXXSQT</RecordLocator>\r\n            <SegmentInfo>\r\n                <DepartureDate>20240928</DepartureDate>\r\n                <ActionCode>HK</ActionCode>\r\n                <DepartureCityCode>PEK</DepartureCityCode>\r\n                <ArrivalCityCode>ICN</ArrivalCityCode>\r\n                <FlightSuffix></FlightSuffix>\r\n                <CabinType>Y</CabinType>\r\n                <FlightNumber>334</FlightNumber>\r\n                <AirlineID>OZ</AirlineID>\r\n            </SegmentInfo>\r\n        </Query>\r\n    </RVALRequest>\r\n</AirRevalidationRQ>",
+        "response": "<TES_AirRevalidationRS>\n    <Success></Success>\n</TES_AirRevalidationRS>",
+        "createTime": "2025-09-03T16:42:34.000+08:00",
+        "createUser": "jiangdequan",
+        "updateTime": "2025-09-19T15:37:38.000+08:00",
+        "updateUser": "xyi"
+      }
+    ],
+    "url": "/xml/AirRevalidation"
+  }
+}

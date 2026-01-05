@@ -1,0 +1,35 @@
+{
+  "code": 200,
+  "msg": "处理成功！",
+  "data": {
+    "id": "17279181470564687",
+    "apiCode": "E67",
+    "apiNameEn": "AirTicketControl",
+    "apiNameCn": "客票控制权获取",
+    "introduce": "该接口主要用于获取客票控制权使用，客票控制权，对应黑屏指令：DETR:TN/票号，C#。",
+    "business": "该接口只针对国内航司票本使用。",
+    "functions": "【DETR:TN/票号，C#】指令是国内票本获取控制权指令，外航票本无法使用。如代理人有外航票本的AIRPORT CONTROL航段需要调整至OPEN，需联系票本航司操作。另外，如国内票本使用该指令无法将机场控制状态调整至open状态，请DETR:TN/票号，H查看是否有O/A 外航航司代码的操作记录，如有，也请外航航司操作。",
+    "requestSchema": "[{\"name\":\"TES_AirTicketControlRQ\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"客票控制权获取请求\",\"children\":[{\"name\":\"POS\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"Point Of Sale\",\"children\":[{\"name\":\"Source\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"请求者信息\",\"children\":[{\"name\":\"@PseudoCityCode\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"伪城市代码（Office代码：PKE099）\",\"children\":[]}]}]},{\"name\":\"TicketControlInfo\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"\",\"children\":[{\"name\":\"TicketNo\",\"type\":\"string\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"票号\",\"children\":[]},{\"name\":\"CouponNos\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"票联号列表\",\"children\":[{\"name\":\"CouponNo\",\"type\":\"int\",\"quantity\":\"1..n\",\"default\":\"\",\"description\":\"票联号（从1开始）\",\"children\":[]}]}]}]}]",
+    "responseSchema": "[{\"name\":\"TES_AirTicketControlRS\",\"type\":\"object\",\"quantity\":\"1\",\"default\":\"\",\"description\":\"客票控制权获取返回\",\"children\":[{\"name\":\"Errors\",\"type\":\"object\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"错误信息集合\",\"children\":[{\"name\":\"Error\",\"type\":\"object\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"错误信息\",\"children\":[{\"name\":\"@Code\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"错误代码（数字）\",\"children\":[]},{\"name\":\"@Type\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"错误类型\",\"children\":[]},{\"name\":\"@ShortText\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"错误描述信息（英文）\",\"children\":[]},{\"name\":\"@ShortTextZH\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"错误描述信息（中文）\",\"children\":[]}]}]},{\"name\":\"Result\",\"type\":\"string\",\"quantity\":\"0..1\",\"default\":\"\",\"description\":\"调用返回结果。OK表示成功\",\"children\":[]}]}]",
+    "errorCodes": "[{\"code\":403,\"name\":\"\",\"msg\":\"\",\"msgZh\":\" 用户名、密码、IP错误或无权限 \"},{\"code\":-303,\"name\":\"\",\"msg\":\" inner service error \",\"msgZh\":\" 内部服务异常 \"},{\"code\":-304,\"name\":\"\",\"msg\":\" sending commands too fast, try again later \",\"msgZh\":\" 访问速度过快,请稍后再试 \"},{\"code\":-305,\"name\":\"\",\"msg\":\" transaction times limited \",\"msgZh\":\" 访问次数限制 \"},{\"code\":-301,\"name\":\"\",\"msg\":\" office permission denied \",\"msgZh\":\" Office 没有权限 \"},{\"code\":-390,\"name\":\"\",\"msg\":\" IBE Service Error \",\"msgZh\":\" IBE服务异常 \"},{\"code\":-311,\"name\":\"\",\"msg\":\" time out, please try again later \",\"msgZh\":\" 操作超时，请稍后再试 \"},{\"code\":-306,\"name\":\"\",\"msg\":\" too many concurrent request for service \",\"msgZh\":\" 访问频率限制 \"},{\"code\":-1,\"name\":\"\",\"msg\":\" Biz Error \",\"msgZh\":\" 业务异常 \"},{\"code\":-402,\"name\":\"\",\"msg\":\" Input error! \",\"msgZh\":\" 输入参数出错 \"}]",
+    "createTime": "2025-07-10T17:25:11.000+08:00",
+    "createUser": "jiangdequan",
+    "updateTime": "2025-09-18T14:06:44.000+08:00",
+    "updateUser": "xyi",
+    "qaApiDemos": [
+      {
+        "id": "22259346977063811",
+        "apiDocId": 17279181470564687,
+        "seqNumber": 1,
+        "demoDesc": "客票控制权获取.xml",
+        "request": "<TES_AirTicketControlRQ>\r\n    <POS>\r\n        <Source PseudoCityCode=\"BJS191\"/>\r\n    </POS>\r\n    <TicketControlInfo>\r\n        <TicketNo>999-2662341850</TicketNo>\r\n        <CouponNos>\r\n            <CouponNo>2</CouponNo>\r\n        </CouponNos>\r\n    </TicketControlInfo>\r\n</TES_AirTicketControlRQ>",
+        "response": "<TES_AirTicketControlRS>\n    <Result>OK</Result>\n</TES_AirTicketControlRS>",
+        "createTime": "2025-09-03T16:42:47.000+08:00",
+        "createUser": "jiangdequan",
+        "updateTime": "2025-09-18T14:07:11.000+08:00",
+        "updateUser": "xyi"
+      }
+    ],
+    "url": "/xml/AirTicketControl"
+  }
+}
